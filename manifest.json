@@ -1,0 +1,18 @@
+{
+  "name": "Van 602 Master Command",
+  "short_name": "Van 602",
+  "description": "Inventory and Error Code Database for Van 602",
+  "start_url": "/van602-app/index.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#2563eb",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/944/944948.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

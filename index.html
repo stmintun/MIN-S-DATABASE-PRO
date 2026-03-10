@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Van 602 - Master Command</title>
+    <link rel="manifest" href="/van602-app/manifest.json">
+    <meta name="theme-color" content="#0f172a">
+    
+    <style>
+        :root { 
+            --primary: #2563eb; --bg: #f1f5f9; --dark: #0f172a; 
+            --danger: #ef4444; --warning: #f59e0b; --success: #16a34a; 
+            --inv-accent: #3b82f6; --err-accent: #f97316; 
+            --gen5-accent: #8b5cf6; --tangent-accent: #0ea5e9; 
+            --pan-accent: #10b981; --calc-accent: #6366f1; 
+        }
+        body { font-family: -apple-system, system-ui, sans-serif; background: var(--bg); margin: 0; padding: 0; color: var(--dark); overflow-x: hidden; }
+        header { background: var(--dark); color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid var(--primary); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .master-search-container { padding: 15px; max-width: 800px; margin: 0 auto; }
+        .master-input { width: 100%; padding: 18px; border-radius: 12px; border: 3px solid var(--primary); font-size: 1.1rem; box-sizing: border-box; outline: none; font-weight: bold; box-shadow: 0 4px 10px rgba(37,99,235,0.2); }
+        .dashboard { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 0 15px 15px; max-width: 800px; margin: 0 auto; }
+        .btn { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 22px 10px; border-radius: 12px; color: white; font-weight: bold; border: none; cursor: pointer; font-size: 0.8rem; gap: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; position: relative; transition: 0.2s; }
+        .btn:active { transform: scale(0.96); }
+        .badge { position: absolute; top: 5px; right: 5px; background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 20px; font-size: 0.7rem; }
+        .bg-blue { background: var(--inv-accent); } 
+        .bg-orange { background: var(--err-accent); } 
+        .bg-purple { background: var(--gen5-accent); } 
+        .bg-cyan { background: var(--tangent-accent); } 
+        .bg-red { background: var(--danger); grid-column: span 2; } 
+        .bg-green { background: var(--pan-accent); } 
+        .bg-indigo { background: var(--calc-accent); grid-column: span 2; }
+        #masterResults, #calcSection { max-width: 800px; margin: 0 auto; padding: 0 15px 120px; }
+        .card { background: white; margin-bottom: 12px; border-radius: 12px; border: 1px solid #e2e8f0; padding: 16px; position: relative; }
+        .stock-zero { color: var(--danger); font-weight: 900; background: #fee2e2; padding: 2px 6px; border-radius: 4px; }
+        .stock-in { color: var(--success); font-weight: 900; background: #dcfce7; padding: 2px 6px; border-radius: 4px; }
+        .calc-card { background: white; padding: 25px; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); }
+        .calc-input { width: 100%; padding: 15px; margin-top: 5px; border-radius: 10px; border: 2px solid #e2e8f0; font-size: 1.3rem; font-weight: bold; box-sizing: border-box; text-align: center; }
+        .avg-display { margin-top: 25px; padding: 25px; background: #eef2ff; border-radius: 12px; text-align: center; border: 3px dashed var(--calc-accent); }
+    </style>
+</head>
+<body onload="init()">
+
+<header>
+    <div style="font-weight:900; font-size:1.1rem; letter-spacing:-0.5px;">MIN'S DATABASE PRO</div>
+    <button class="btn bg-blue" style="padding:8px 15px; min-height:auto;" onclick="location.reload()">🏠 HOME</button>
+</header>
+
+<div class="master-search-container">
+    <input type="text" id="masterSearch" class="master-input" placeholder="🔍 SEARCH RECORDS..." oninput="runMasterSearch()">
+</div>
+
+<div class="dashboard" id="mainDash">
+    <button class="btn bg-red" onclick="filterType('outOfStock')">🚨 OUT OF STOCK <span class="badge" id="countOut">0</span></button>
+    <button class="btn bg-indigo" onclick="showCalculator()">🌡️ TEMP CALCULATOR</button>
+    <button class="btn bg-blue" onclick="filterType('inStock')">📦 IN STOCK <span class="badge" id="countIn">0</span></button>
+    <button class="btn bg-orange" onclick="filterType('bht')">⚠️ BHT CODES</button>
+</div>
+
+<div id="calcSection" style="display:none;">
+    <div class="calc-card">
+        <h2 style="margin:0 0 20px 0; color:var(--calc-accent); text-align:center;">Temperature Average</h2>
+        <input type="number" step="0.1" id="minTemp" class="calc-input" placeholder="Min °C" oninput="calculateAvg()">
+        <input type="number" step="0.1" id="maxTemp" class="calc-input" placeholder="Max °C" oninput="calculateAvg()" style="margin-top:10px;">
+        <div class="avg-display">
+            <div id="avgResult" style="font-size:3rem; font-weight:900; color:var(--dark);">-- °C</div>
+        </div>
+    </div>
+</div>
+
+<div id="masterResults"></div>
+
+<script>
+    // --- SERVICE WORKER REGISTRATION ---
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/van602-app/sw.js', { scope: '/van602-app/' })
+                .then(reg => console.log('Offline service active!'))
+                .catch(err => console.error('Offline setup failed.', err));
+        });
+    }
+
+    // --- DATABASE ---
+    const db = {
+        "parts": [
+            { "PartID": "137661", "Description": "Switch Micro Door Closed", "Location": "602-003", "Stock": 1 },
+            { "PartID": "133480", "Description": "Switch Pressure Asco", "Location": "602-027", "Stock": 0 },
+            { "PartID": "137707", "Description": "Trap Air & Steam 15mm", "Location": "602-019", "Stock": 2 }
+            // ... Add more parts here
+        ],
+        "bht": [
+            { "Code": "3", "Message": "PT100 INADM.DEVI", "Cause": "Temp deviation" }
+        ]
+    };
+
+    function init() {
+        updateCounts();
+    }
+
+    function updateCounts() {
+        document.getElementById('countOut').innerText = db.parts.filter(p => p.Stock === 0).length;
+        document.getElementById('countIn').innerText = db.parts.filter(p => p.Stock > 0).length;
+    }
+
+    function runMasterSearch() {
+        const query = document.getElementById('masterSearch').value.toLowerCase();
+        const resultsDiv = document.getElementById('masterResults');
+        resultsDiv.innerHTML = '';
+
+        if(query.length < 2) return;
+
+        const filtered = db.parts.filter(p => 
+            p.PartID.toLowerCase().includes(query) || 
+            p.Description.toLowerCase().includes(query)
+        );
+
+        filtered.forEach(p => {
+            const stockClass = p.Stock > 0 ? 'stock-in' : 'stock-zero';
+            resultsDiv.innerHTML += `
+                <div class="card">
+                    <div style="font-weight:bold; color:var(--primary);">${p.PartID}</div>
+                    <div>${p.Description}</div>
+                    <div style="font-size:0.8rem; margin-top:5px;">Loc: ${p.Location} | <span class="${stockClass}">Stock: ${p.Stock}</span></div>
+                </div>`;
+        });
+    }
+
+    function filterType(type) {
+        document.getElementById('calcSection').style.display = 'none';
+        const resultsDiv = document.getElementById('masterResults');
+        resultsDiv.innerHTML = '';
+        
+        let list = [];
+        if(type === 'outOfStock') list = db.parts.filter(p => p.Stock === 0);
+        if(type === 'inStock') list = db.parts.filter(p => p.Stock > 0);
+        
+        list.forEach(p => {
+            resultsDiv.innerHTML += `<div class="card"><b>${p.PartID}</b><br>${p.Description}</div>`;
+        });
+    }
+
+    function showCalculator() {
+        document.getElementById('masterResults').innerHTML = '';
+        document.getElementById('calcSection').style.display = 'block';
+    }
+
+    function calculateAvg() {
+        const min = parseFloat(document.getElementById('minTemp').value);
+        const max = parseFloat(document.getElementById('maxTemp').value);
+        if(!isNaN(min) && !isNaN(max)) {
+            document.getElementById('avgResult').innerText = ((min + max) / 2).toFixed(2) + " °C";
+        }
+    }
+</script>
+</body>
+</html>
