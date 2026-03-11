@@ -221,7 +221,7 @@ const db = {"parts": [{"PartID": "137661", "Description": "Switch Micro Door Clo
         document.getElementById('pathBar').innerText = `DRIVE > ${activeCat.toUpperCase()} > ${n}`;
         document.getElementById('driveActions').classList.add('hidden');
         let h = `<h3 style="display:flex; justify-content:space-between; align-items:center; margin-top:0;">${n} <button class="action-btn" onclick="renderFolders()">BACK</button></h3>`;
-        h += `<div class="section-title"><span>DOCUMENTS</span> <button class="action-btn" onclick="document.getElementById('fileUpload').click()">➕ UPLOAD</button></div>`;
+        h += `<div class="section-title"><span>DOCUMENTS</span> <button class="action-btn" onclick="document.getElementById('fileUpload').click()">➕ UPLOAD DOCUMENT(S)</button></div>`;
         folder.files.forEach((fi, i) => { h += `<div class="card" style="display:flex; justify-content:space-between; align-items:center;"><div onclick="previewFile(${i})" style="flex-grow:1; font-weight:600;">📄 ${fi.name}</div><button class="action-btn" style="color:red;" onclick="deleteFile(${i})">✖</button></div>`; });
         h += `<div class="section-title"><span>SITE NOTES</span></div><textarea id="nBox" oninput="saveNote()">${folder.notes || ""}</textarea>`;
         c.innerHTML = h;
@@ -264,8 +264,8 @@ const db = {"parts": [{"PartID": "137661", "Description": "Switch Micro Door Clo
             if(matches.length) {
                 r.innerHTML += `<div class="section-title"><span>${key.toUpperCase()}</span><span>${matches.length} matches</span></div>`;
                 matches.forEach(item => {
-                    let t = item.PartID || item.Code || item['Error Code'] || item['Unit S/N'] || item['Error Code / Fault Name'];
-                    let s = item.Description || item['Display / Message'] || item.Location || item['Alarm Description / Details'] || item['Alarm Description'];
+                    let t = item['Error Code / Fault Name'] || item.PartID || item.Code || item['Error Code'] || item['Unit S/N'];
+                    let s = item['Alarm Description / Details'] || item.Description || item['Display / Message'] || item.Location || item['Alarm Description'];
                     r.innerHTML += `<div class="card" onclick='showDetails(${JSON.stringify(item)}, "${key}")'><div class="card-title">${t}</div><div class="card-sub">${s}</div></div>`;
                 });
             }
@@ -276,7 +276,7 @@ const db = {"parts": [{"PartID": "137661", "Description": "Switch Micro Door Clo
         const b = document.getElementById('m-body'); const pDiv = document.getElementById('m-parts'); const pList = document.getElementById('partList');
         const imgArea = document.getElementById('imageArea');
         b.innerHTML = ''; pList.innerHTML = ''; pDiv.classList.add('hidden');
-        currentPartID = item.PartID || item.Code || item['Error Code'] || item['Unit S/N'];
+        currentPartID = item.PartID || item.Code || item['Error Code'] || item['Unit S/N'] || item['Error Code / Fault Name'];
         
         if (type === 'parts' || type === 'out') { imgArea.classList.remove('hidden'); displayPhoto(photoVault[currentPartID]); }
         else { imgArea.classList.add('hidden'); }
@@ -289,19 +289,20 @@ const db = {"parts": [{"PartID": "137661", "Description": "Switch Micro Door Clo
             }
         });
 
-        // EMAIL GENERATOR
+        // EMAIL GENERATOR: Work Task and Order Part
         if(type === 'parts' || type === 'out') {
             const pID = item.PartID;
             b.innerHTML += `
                 <div style="display:flex; gap:10px; margin-top:15px;">
-                    <button class="btn bg-indigo" style="flex:1; padding:10px; font-size:0.7rem;" onclick="generateEmail('${pID}', '')">📧 WORK TASK</button>
+                    <button class="btn bg-indigo" style="flex:1; padding:10px; font-size:0.7rem;" onclick="generateEmail('${pID}', 'Site Job Task')">📧 WORK TASK</button>
                     <button class="btn bg-red" style="flex:1; padding:10px; font-size:0.7rem;" onclick="generateEmail('${pID}', 'Order Part')">📦 ORDER PART</button>
                 </div>`;
         }
 
-        // Cross-Reference Engine
+        // Cross-Reference Engine for Faults
         const tech = ["pt100", "probe", "valve", "pump", "seal", "switch", "sensor", "fuse", "relay", "filter", "door", "motor", "gasket", "belt", "bearing"];
         const found = db.parts.filter(p => tech.some(w => fullText.includes(w) && p.Description.toLowerCase().includes(w)));
+        
         if(found.length > 0 && type !== 'parts' && type !== 'pan' && type !== 'out') {
             pDiv.classList.remove('hidden');
             found.slice(0, 8).forEach(p => {
@@ -322,8 +323,8 @@ const db = {"parts": [{"PartID": "137661", "Description": "Switch Micro Door Clo
         let list = (mode === 'out') ? db.parts.filter(p => p.Stock == 0 || p.Stock == "0") : db[mode === 'pan' ? 'pan' : mode];
         r.innerHTML = `<div class="section-title"><span>${mode.toUpperCase()}</span><span>${list.length} items</span></div><button class="btn bg-blue" style="width:100%; margin-bottom:1rem;" onclick="location.reload()">⬅️ BACK TO DASHBOARD</button>`;
         list.forEach(item => {
-            let t = item.PartID || item.Code || item['Error Code'] || item['Unit S/N'];
-            let s = item.Description || item['Display / Message'] || item.Location || item['Alarm Description / Details'] || item['Alarm Description'];
+            let t = item['Error Code / Fault Name'] || item.PartID || item.Code || item['Error Code'] || item['Unit S/N'];
+            let s = item['Alarm Description / Details'] || item.Description || item['Display / Message'] || item.Location || item['Alarm Description'];
             r.innerHTML += `<div class="card" onclick='showDetails(${JSON.stringify(item)}, "${mode === 'out' ? 'parts' : mode}")'><div class="card-title">${t}</div><div class="card-sub">${s}</div></div>`;
         });
     }
