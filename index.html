@@ -11,13 +11,13 @@
             --accent: #3b82f6; --card-bg: #ffffff;
             --indigo: #6366f1; --teal: #0d9488; --cyan: #0891b2; --sky: #0284c7;
         }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); margin: 0; padding: 0; color: var(--dark); overflow-x: hidden; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--bg); margin: 0; padding: 0; color: var(--dark); overflow-x: hidden; }
         header { background: var(--dark); color: white; padding: 1rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid var(--primary); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .search-area { padding: 1rem; max-width: 900px; margin: 0 auto; }
         .search-box { width: 100%; padding: 1.2rem; border-radius: 12px; border: 2px solid #cbd5e1; font-size: 1.1rem; box-sizing: border-box; outline: none; transition: border-color 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
         .search-box:focus { border-color: var(--primary); }
         .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 1rem; max-width: 900px; margin: 0 auto; }
-        .btn { padding: 1.2rem; border-radius: 12px; border: none; color: white; font-weight: 700; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 0.8rem; text-align: center; transition: background 0.2s; position: relative; }
+        .btn { padding: 1.2rem; border-radius: 12px; border: none; color: white; font-weight: 700; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 0.8rem; text-align: center; transition: background 0.2s; }
         .btn:active { transform: scale(0.95); }
         .badge { background: rgba(0,0,0,0.25); padding: 2px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 800; }
         
@@ -128,7 +128,7 @@
             <button class="action-btn" style="width:100%; margin-bottom: 20px; background: #fee2e2; color: #b91c1c; border-color: #fecaca;" onclick="deletePhoto()">🗑️ DELETE PHOTO</button>
         </div>
         <h2 id="m-title" style="margin-top:0; color:var(--primary); font-size:1.3rem;">Details</h2>
-        <div id="m-body" style="margin-top: 15px;"></div>
+        <div id="m-body"></div>
         <div id="m-parts" class="related-parts hidden">
             <div style="font-size:0.7rem; font-weight:900; color:var(--danger); margin-bottom:8px;">SUGGESTED SPARE PARTS</div>
             <div id="partList"></div>
@@ -192,23 +192,10 @@ const db = {"parts": [{"PartID": "137661", "Description": "Switch Micro Door Clo
     function displayPhoto(data) {
         const img = document.getElementById('itemPhoto');
         const placeholder = document.getElementById('photoPlaceholder');
-        if (data) {
-            img.src = data;
-            img.classList.remove('hidden');
-            placeholder.classList.add('hidden');
-        } else {
-            img.src = "";
-            img.classList.add('hidden');
-            placeholder.classList.remove('hidden');
-        }
+        if (data) { img.src = data; img.classList.remove('hidden'); placeholder.classList.add('hidden'); }
+        else { img.src = ""; img.classList.add('hidden'); placeholder.classList.remove('hidden'); }
     }
-    function deletePhoto() {
-        if(confirm("Delete photo?")) {
-            delete photoVault[currentPartID];
-            localStorage.setItem('mins_photos', JSON.stringify(photoVault));
-            displayPhoto(null);
-        }
-    }
+    function deletePhoto() { if(confirm("Delete photo?")) { delete photoVault[currentPartID]; localStorage.setItem('mins_photos', JSON.stringify(photoVault)); displayPhoto(null); } }
 
     // --- DRIVE ENGINE ---
     function openDrive(cat) {
@@ -234,7 +221,7 @@ const db = {"parts": [{"PartID": "137661", "Description": "Switch Micro Door Clo
         document.getElementById('pathBar').innerText = `DRIVE > ${activeCat.toUpperCase()} > ${n}`;
         document.getElementById('driveActions').classList.add('hidden');
         let h = `<h3 style="display:flex; justify-content:space-between; align-items:center; margin-top:0;">${n} <button class="action-btn" onclick="renderFolders()">BACK</button></h3>`;
-        h += `<div class="section-title"><span>DOCUMENTS</span> <button class="action-btn" onclick="document.getElementById('fileUpload').click()">➕ UPLOAD DOCUMENT(S)</button></div>`;
+        h += `<div class="section-title"><span>DOCUMENTS</span> <button class="action-btn" onclick="document.getElementById('fileUpload').click()">➕ UPLOAD</button></div>`;
         folder.files.forEach((fi, i) => { h += `<div class="card" style="display:flex; justify-content:space-between; align-items:center;"><div onclick="previewFile(${i})" style="flex-grow:1; font-weight:600;">📄 ${fi.name}</div><button class="action-btn" style="color:red;" onclick="deleteFile(${i})">✖</button></div>`; });
         h += `<div class="section-title"><span>SITE NOTES</span></div><textarea id="nBox" oninput="saveNote()">${folder.notes || ""}</textarea>`;
         c.innerHTML = h;
@@ -278,7 +265,7 @@ const db = {"parts": [{"PartID": "137661", "Description": "Switch Micro Door Clo
                 r.innerHTML += `<div class="section-title"><span>${key.toUpperCase()}</span><span>${matches.length} matches</span></div>`;
                 matches.forEach(item => {
                     let t = item.PartID || item.Code || item['Error Code'] || item['Unit S/N'] || item['Error Code / Fault Name'];
-                    let s = item.Description || item['Display / Message'] || item.Location || item['Alarm Description'];
+                    let s = item.Description || item['Display / Message'] || item.Location || item['Alarm Description / Details'] || item['Alarm Description'];
                     r.innerHTML += `<div class="card" onclick='showDetails(${JSON.stringify(item)}, "${key}")'><div class="card-title">${t}</div><div class="card-sub">${s}</div></div>`;
                 });
             }
@@ -302,9 +289,19 @@ const db = {"parts": [{"PartID": "137661", "Description": "Switch Micro Door Clo
             }
         });
 
+        // EMAIL GENERATOR
+        if(type === 'parts' || type === 'out') {
+            const pID = item.PartID;
+            b.innerHTML += `
+                <div style="display:flex; gap:10px; margin-top:15px;">
+                    <button class="btn bg-indigo" style="flex:1; padding:10px; font-size:0.7rem;" onclick="generateEmail('${pID}', '')">📧 WORK TASK</button>
+                    <button class="btn bg-red" style="flex:1; padding:10px; font-size:0.7rem;" onclick="generateEmail('${pID}', 'Order Part')">📦 ORDER PART</button>
+                </div>`;
+        }
+
+        // Cross-Reference Engine
         const tech = ["pt100", "probe", "valve", "pump", "seal", "switch", "sensor", "fuse", "relay", "filter", "door", "motor", "gasket", "belt", "bearing"];
         const found = db.parts.filter(p => tech.some(w => fullText.includes(w) && p.Description.toLowerCase().includes(w)));
-        
         if(found.length > 0 && type !== 'parts' && type !== 'pan' && type !== 'out') {
             pDiv.classList.remove('hidden');
             found.slice(0, 8).forEach(p => {
@@ -314,13 +311,19 @@ const db = {"parts": [{"PartID": "137661", "Description": "Switch Micro Door Clo
         document.getElementById('modal').style.display = 'flex';
     }
 
+    function generateEmail(id, task) {
+        const subject = "Part Request";
+        const body = "Work Task: " + task + "\nPart Number: " + id + "\nQuantity: \nDetails: \n\nPlease order this part for this job and deliver it to Van 602.\n\nThank you 😊";
+        window.location.href = "mailto:?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    }
+
     function filterData(mode) {
         const r = document.getElementById('results'); document.getElementById('menuGrid').classList.add('hidden'); r.innerHTML = '';
         let list = (mode === 'out') ? db.parts.filter(p => p.Stock == 0 || p.Stock == "0") : db[mode === 'pan' ? 'pan' : mode];
         r.innerHTML = `<div class="section-title"><span>${mode.toUpperCase()}</span><span>${list.length} items</span></div><button class="btn bg-blue" style="width:100%; margin-bottom:1rem;" onclick="location.reload()">⬅️ BACK TO DASHBOARD</button>`;
         list.forEach(item => {
             let t = item.PartID || item.Code || item['Error Code'] || item['Unit S/N'];
-            let s = item.Description || item.Location || item['Alarm Description'];
+            let s = item.Description || item['Display / Message'] || item.Location || item['Alarm Description / Details'] || item['Alarm Description'];
             r.innerHTML += `<div class="card" onclick='showDetails(${JSON.stringify(item)}, "${mode === 'out' ? 'parts' : mode}")'><div class="card-title">${t}</div><div class="card-sub">${s}</div></div>`;
         });
     }
