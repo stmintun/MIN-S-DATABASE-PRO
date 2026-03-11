@@ -17,7 +17,7 @@
         .search-box { width: 100%; padding: 1.2rem; border-radius: 12px; border: 2px solid #cbd5e1; font-size: 1.1rem; box-sizing: border-box; outline: none; transition: border-color 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
         .search-box:focus { border-color: var(--primary); }
         .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 1rem; max-width: 900px; margin: 0 auto; }
-        .btn { padding: 1.2rem; border-radius: 12px; border: none; color: white; font-weight: 700; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 0.8rem; text-align: center; transition: background 0.2s; }
+        .btn { padding: 1.2rem; border-radius: 12px; border: none; color: white; font-weight: 700; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 0.8rem; text-align: center; transition: background 0.2s; position: relative; }
         .btn:active { transform: scale(0.95); }
         .badge { background: rgba(0,0,0,0.25); padding: 2px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 800; }
         
@@ -43,12 +43,12 @@
         .detail-label { font-size: 0.65rem; font-weight: 900; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; }
         .detail-val { font-size: 1rem; font-weight: 600; color: #1e293b; margin-top: 2px; white-space: pre-wrap; }
         
-        .photo-slot { width: 100%; height: 220px; background: #f1f5f9; border-radius: 12px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 2px dashed #cbd5e1; position: relative; cursor: pointer; }
-        .photo-slot img { width: 100%; height: 100%; object-fit: contain; }
-        
         #docPreview { display: none; position: fixed; inset: 0; background: white; z-index: 3000; flex-direction: column; }
         .preview-header { background: var(--dark); color: white; padding: 10px; display: flex; justify-content: space-between; align-items: center; }
         iframe, img.preview-content { width: 100%; height: 100%; border: none; object-fit: contain; }
+        
+        .photo-slot { width: 100%; height: 220px; background: #f1f5f9; border-radius: 12px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 2px dashed #cbd5e1; position: relative; cursor: pointer; }
+        .photo-slot img { width: 100%; height: 100%; object-fit: contain; }
         
         textarea { width: 100%; height: 120px; border-radius: 12px; border: 2px solid #cbd5e1; padding: 12px; box-sizing: border-box; font-family: inherit; font-size: 0.9rem; background: #fffdf0; margin-top: 5px; }
         .hidden { display: none !important; }
@@ -234,7 +234,7 @@ const db = {"parts": [{"PartID": "137661", "Description": "Switch Micro Door Clo
         document.getElementById('pathBar').innerText = `DRIVE > ${activeCat.toUpperCase()} > ${n}`;
         document.getElementById('driveActions').classList.add('hidden');
         let h = `<h3 style="display:flex; justify-content:space-between; align-items:center; margin-top:0;">${n} <button class="action-btn" onclick="renderFolders()">BACK</button></h3>`;
-        h += `<div class="section-title"><span>DOCUMENTS</span> <button class="action-btn" onclick="document.getElementById('fileUpload').click()">➕ UPLOAD</button></div>`;
+        h += `<div class="section-title"><span>DOCUMENTS</span> <button class="action-btn" onclick="document.getElementById('fileUpload').click()">➕ UPLOAD DOCUMENT(S)</button></div>`;
         folder.files.forEach((fi, i) => { h += `<div class="card" style="display:flex; justify-content:space-between; align-items:center;"><div onclick="previewFile(${i})" style="flex-grow:1; font-weight:600;">📄 ${fi.name}</div><button class="action-btn" style="color:red;" onclick="deleteFile(${i})">✖</button></div>`; });
         h += `<div class="section-title"><span>SITE NOTES</span></div><textarea id="nBox" oninput="saveNote()">${folder.notes || ""}</textarea>`;
         c.innerHTML = h;
@@ -320,7 +320,7 @@ const db = {"parts": [{"PartID": "137661", "Description": "Switch Micro Door Clo
         r.innerHTML = `<div class="section-title"><span>${mode.toUpperCase()}</span><span>${list.length} items</span></div><button class="btn bg-blue" style="width:100%; margin-bottom:1rem;" onclick="location.reload()">⬅️ BACK TO DASHBOARD</button>`;
         list.forEach(item => {
             let t = item.PartID || item.Code || item['Error Code'] || item['Unit S/N'];
-            let s = item.Description || item['Display / Message'] || item.Location || item['Alarm Description'];
+            let s = item.Description || item.Location || item['Alarm Description'];
             r.innerHTML += `<div class="card" onclick='showDetails(${JSON.stringify(item)}, "${mode === 'out' ? 'parts' : mode}")'><div class="card-title">${t}</div><div class="card-sub">${s}</div></div>`;
         });
     }
