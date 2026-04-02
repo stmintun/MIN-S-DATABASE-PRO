@@ -18,13 +18,14 @@ const db_parts = [{"PartID": "137661", "Description": "Switch Micro Door Closed 
 const db_bht = [{"Code": "1\u20132", "Model(s)": "All", "Display / Message": "ERROR 1 / 2", "Possible Cause": "Not Applicable (N.A.)", "Troubleshooting / Remedy": "N.A."}, {"Code": "3", "Model(s)": "M3", "Display / Message": "PT100 INADM.DEVI", "Possible Cause": "Temp. deviation between two sensors > limit", "Troubleshooting / Remedy": "Restart; if repeat, replace PT100 sensor."}, {"Code": "4", "Model(s)": "M3", "Display / Message": "HIGH DISINF.TEMP", "Possible Cause": "Chamber temp. > allowed limit during disinfection", "Troubleshooting / Remedy": "Restart and call service if repeated."}, {"Code": "4", "Model(s)": "M5", "Display / Message": "Def.DIFF.PT Desinf", "Possible Cause": "Temp. difference between sensors > 3\u00b0C", "Troubleshooting / Remedy": "Check chamber, boiler, and dryer PT100."}, {"Code": "5", "Model(s)": "M3", "Display / Message": "LOW DISINF.TEMP", "Possible Cause": "Chamber temp. < allowed limit during disinfection", "Troubleshooting / Remedy": "Restart and call service if repeated."}, {"Code": "5", "Model(s)": "M5", "Display / Message": "Jet Error", "Possible Cause": "Washer spray arms are not turning", "Troubleshooting / Remedy": "Check for blockages, spray arm bush, and cap."}, {"Code": "6", "Model(s)": "M3", "Display / Message": "ERROR CONDUCTIV.", "Possible Cause": "RO-water conductivity > set point value", "Troubleshooting / Remedy": "Ensure DI-water quality; check sensor."}, {"Code": "6", "Model(s)": "M5", "Display / Message": "High Disinf.Temp", "Possible Cause": "Temp. reached 98\u00b0C during holding time", "Troubleshooting / Remedy": "Check chamber PT100 and heating contactor."}, {"Code": "7", "Model(s)": "M3", "Display / Message": "WRONG VALVE", "Possible Cause": "Non-existing valve used in program", "Troubleshooting / Remedy": "Call service engineer."}, {"Code": "7", "Model(s)": "M5", "Display / Message": "Low Disinf.Temp", "Possible Cause": "Disinf. temp. not reached set value (>70\u00b0C)", "Troubleshooting / Remedy": "Check chamber PT100 and heating contactors."}, {"Code": "8", "Model(s)": "M3", "Display / Message": "TANKTEMP. > 95 C", "Possible Cause": "Wash chamber temp. exceeded safety limit", "Troubleshooting / Remedy": "Restart machine; check heating components."}, {"Code": "8", "Model(s)": "M5", "Display / Message": "Conductivity fault", "Possible Cause": "Rinse water conductivity outside tolerance", "Troubleshooting / Remedy": "Check main water supply and sensor."}, {"Code": "8-11", "Model(s)": "M4/M5ISO", "Display / Message": "Def CS Door End (op/cl/up/do)", "Possible Cause": "Door end switches (Clean Side) not recognized", "Troubleshooting / Remedy": "Check/adjust door end switch or mechanics."}, {"Code": "9", "Model(s)": "M3/M5", "Display / Message": "STOP-BUTTON / STOP-KEY", "Possible Cause": "User activated \"Stop\" key (interruption)", "Troubleshooting / Remedy": "Restart the program."}, {"Code": "10", "Model(s)": "M3/M5", "Display / Message": "WRONG RACK", "Possible Cause": "Incorrect rack/insert basket used for program", "Troubleshooting / Remedy": "Use proper rack and restart program."}, {"Code": "11", "Model(s)": "M3/M5", "Display / Message": "NO PROG-END", "Possible Cause": "Last program step not set to \"Program end\"", "Troubleshooting / Remedy": "Verify program steps (must end with type 29)."}, {"Code": "12", "Model(s)": "M3/M5", "Display / Message": "PROG.-START ERR", "Possible Cause": "First program step not set to \"Preparation\"", "Troubleshooting / Remedy": "Verify program steps (must start with type 28)."}, {"Code": "12", "Model(s)": "M5 ISO", "Display / Message": "Level-error", "Possible Cause": "Final-level reached before basic-level", "Troubleshooting / Remedy": "Reset unit and restart program."}, {"Code": "12-15", "Model(s)": "M4/M5ISO", "Display / Message": "Def. Door CS (op/cl/up/do)", "Possible Cause": "Clean Side door activity timed out", "Troubleshooting / Remedy": "Check door mechanics for jammed objects."}, {"Code": "13", "Model(s)": "M3/M5", "Display / Message": "TEMP < DOSERTEMP", "Possible Cause": "Step holding temp. is lower than dosing temp.", "Troubleshooting / Remedy": "Verify program step temperature settings."}, {"Code": "14", "Model(s)": "M3/M5", "Display / Message": "DRYER TEMP ERR", "Possible Cause": "Dryer failed to reach target temp. within timeout", "Troubleshooting / Remedy": "Check heating elements, contactor, and dryer."}, {"Code": "15", "Model(s)": "M3/M5", "Display / Message": "WRONG DOS-NR.", "Possible Cause": "Non-existing dosing unit number selected", "Troubleshooting / Remedy": "Verify program dosing step parameters."}, {"Code": "16", "Model(s)": "M3", "Display / Message": "ERR. BOIL. COOL", "Possible Cause": "Program accessing boiler water without preparation", "Troubleshooting / Remedy": "Verify program steps."}, {"Code": "16", "Model(s)": "M5 ISO", "Display / Message": "Filling < MIN", "Possible Cause": "Required water volume reached too soon", "Troubleshooting / Remedy": "Check level/pressure sensors and water valve."}, {"Code": "16", "Model(s)": "M5 ISO", "Display / Message": "Dosing Security!", "Possible Cause": "Maximum dosing time exceeded", "Troubleshooting / Remedy": "Check dosing pump/sensor; recalibrate system."}, {"Code": "16", "Model(s)": "M4/M5ISO", "Display / Message": "Safety door CS", "Possible Cause": "Safety panel of Clean Side door was pressed", "Troubleshooting / Remedy": "Remove obstructing object."}, {"Code": "17", "Model(s)": "M3", "Display / Message": "ERR. BOIL. CONTACT", "Possible Cause": "Boiler contactor monitoring reacted", "Troubleshooting / Remedy": "Test and exchange contactor if necessary."}, {"Code": "17", "Model(s)": "M5 ISO", "Display / Message": "Filling > MAX", "Possible Cause": "Maximum water volume exceeded", "Troubleshooting / Remedy": "Check level/pressure sensors and water valve."}, {"Code": "18", "Model(s)": "M3/M5", "Display / Message": "BOIL. OVERLEVEL", "Possible Cause": "Too much water in boiler; valve or switch defect", "Troubleshooting / Remedy": "Activate drain valves; check level sensors."}, {"Code": "18-21", "Model(s)": "M4/M5ISO", "Display / Message": "Def USDoorEnd (op/cl/up/do)", "Possible Cause": "Door end switches (Unclean Side) not recognized", "Troubleshooting / Remedy": "Check/adjust door end switches."}, {"Code": "19", "Model(s)": "M5 ISO", "Display / Message": "Lack of water", "Possible Cause": "Requested water volume not reached (timeout)", "Troubleshooting / Remedy": "Check water supply, valves, and drain leaks."}, {"Code": "20", "Model(s)": "M3/M5", "Display / Message": "ERR.PUMP-PRESS.", "Possible Cause": "Wash pressure control detected low pressure", "Troubleshooting / Remedy": "Check pump, pressure sensor, and foaming."}, {"Code": "22-25", "Model(s)": "M4/M5ISO", "Display / Message": "Def. Door US (op/cl/up/do)", "Possible Cause": "Unclean Side door activity timed out", "Troubleshooting / Remedy": "Check door mechanics for jammed objects."}, {"Code": "21", "Model(s)": "M3/M5", "Display / Message": "ERR. REM. FILLING", "Possible Cause": "Rest-filling after pump start failed", "Troubleshooting / Remedy": "Check water availability and filling system."}, {"Code": "22", "Model(s)": "M3", "Display / Message": "ERR. DRAINAGE", "Possible Cause": "Chamber not emptied within time limit", "Troubleshooting / Remedy": "Check drain pump and level sensors."}, {"Code": "23", "Model(s)": "M3/M5", "Display / Message": "ERR. FOAMING", "Possible Cause": "Wash pressure lost due to foaming or insertion", "Troubleshooting / Remedy": "Check endoscope insertion and foaming."}, {"Code": "24", "Model(s)": "M3/M5", "Display / Message": "TANK OVERLEVEL", "Possible Cause": "Too much water in wash chamber", "Troubleshooting / Remedy": "Check inlet valve and level system."}, {"Code": "25", "Model(s)": "M3/M5", "Display / Message": "DOOR OPEN", "Possible Cause": "Door detected open during wash cycle", "Troubleshooting / Remedy": "Check door micro switch and mechanics."}, {"Code": "25", "Model(s)": "M5 ISO", "Display / Message": "Emergency stop Error", "Possible Cause": "Conveyor emergency stop activated", "Troubleshooting / Remedy": "Check emergency switch and safety hood."}, {"Code": "26-27", "Model(s)": "M5 ISO", "Display / Message": "Safety bar (CS/UCS)", "Possible Cause": "Safety bar activated by object or operator", "Troubleshooting / Remedy": "Check for obstructions or safety bar defect."}, {"Code": "28\u201335", "Model(s)": "M4/M5ISO", "Display / Message": "Break/Def DPR (R/L)", "Possible Cause": "Inadmissible value or pressure drop in test sensors", "Troubleshooting / Remedy": "Check sensor connections; run Pressure Test (P15)."}, {"Code": "36", "Model(s)": "All", "Display / Message": "Break Tank PT100", "Possible Cause": "Inadmissible value / interruption at tank sensor", "Troubleshooting / Remedy": "Check sensor and connections."}, {"Code": "38", "Model(s)": "M5 ISO", "Display / Message": "Door CS open!", "Possible Cause": "Clean Side door detected open during program", "Troubleshooting / Remedy": "Check door open sensor."}, {"Code": "39", "Model(s)": "M5 ISO", "Display / Message": "Door UCS open!", "Possible Cause": "Unclean Side door detected open during program", "Troubleshooting / Remedy": "Check door open sensor."}, {"Code": "40", "Model(s)": "All", "Display / Message": "DOS 1 EMPTY", "Possible Cause": "Cleaner container empty or sensor defect", "Troubleshooting / Remedy": "Refill container."}, {"Code": "41", "Model(s)": "All", "Display / Message": "DOS 1 START", "Possible Cause": "Dosing unit not working after activation", "Troubleshooting / Remedy": "Run P16 (Rinsing dosage system)."}, {"Code": "42\u201358", "Model(s)": "M5 ISO", "Display / Message": "Def. Dos (1-4) (Start/MAX/Min)", "Possible Cause": "Dosing unit tolerance, flow, or activation errors", "Troubleshooting / Remedy": "Check impulse sensors, pumps, and valves; run P16."}, {"Code": "54", "Model(s)": "M4/M5ISO", "Display / Message": "Def. drain", "Possible Cause": "Chamber not emptied within time limit", "Troubleshooting / Remedy": "Check drain pump and level recognition."}, {"Code": "59", "Model(s)": "All", "Display / Message": "CALIBR. DOS.", "Possible Cause": "Dosage system calibration lost or missing", "Troubleshooting / Remedy": "Perform new calibration."}, {"Code": "60", "Model(s)": "All", "Display / Message": "ERR. TANKHEAT", "Possible Cause": "Chamber failed to reach target temperature", "Troubleshooting / Remedy": "Check heating elements, contactors, and sensors."}, {"Code": "61", "Model(s)": "M4/M5ISO", "Display / Message": "Motor prot. UWP", "Possible Cause": "Circulation pump motor overcharged or phase failed", "Troubleshooting / Remedy": "Reset motor protection switch; check for shorts."}, {"Code": "62", "Model(s)": "M4/M5ISO", "Display / Message": "STL 60 reaction", "Possible Cause": "Temperature exceeded 60\u00b0C (Endoscope programs)", "Troubleshooting / Remedy": "Check wash program parameters."}, {"Code": "63", "Model(s)": "All", "Display / Message": "Maintenance date", "Possible Cause": "Service counter reached pre-set number of cycles", "Troubleshooting / Remedy": "Carry out maintenance and reset counter."}, {"Code": "64", "Model(s)": "M5 ISO", "Display / Message": "Boiler leak", "Possible Cause": "Signal loss from boiler normal level float switch", "Troubleshooting / Remedy": "Check float switch and boiler drain valve."}, {"Code": "65", "Model(s)": "M5 ISO", "Display / Message": "Boiler inlet defect!", "Possible Cause": "Boiler failed to fill within time limit", "Troubleshooting / Remedy": "Check inlet valve and float switch."}, {"Code": "66", "Model(s)": "M5 ISO", "Display / Message": "Boiler heating defect!", "Possible Cause": "Boiler failed to reach set temperature", "Troubleshooting / Remedy": "Check heating elements and thermostat."}, {"Code": "67", "Model(s)": "M5 ISO", "Display / Message": "Break boiler PT100!", "Possible Cause": "Interruption at boiler temperature sensor", "Troubleshooting / Remedy": "Check/exchange PT100 sensor."}, {"Code": "68", "Model(s)": "M5 ISO", "Display / Message": "Short circuit boiler PT100", "Possible Cause": "Short circuit at boiler temperature sensor", "Troubleshooting / Remedy": "Check/exchange PT100 sensor."}, {"Code": "72", "Model(s)": "M5 ISO", "Display / Message": "Motor protection pump", "Possible Cause": "Recirculation pump motor overcharged", "Troubleshooting / Remedy": "Check connections, balance, and drain valve."}, {"Code": "74", "Model(s)": "All", "Display / Message": "CHANGE STERILFILT", "Possible Cause": "Maintenance interval for filter reached", "Troubleshooting / Remedy": "Replace sterile filter."}, {"Code": "84", "Model(s)": "M5 ISO", "Display / Message": "Interbus error", "Possible Cause": "Communication failure in interbus system", "Troubleshooting / Remedy": "Check connections on PLC and touchscreen."}, {"Code": "85", "Model(s)": "M5 ISO", "Display / Message": "Error in peripherals", "Possible Cause": "Fault in connected devices or Fuse F135", "Troubleshooting / Remedy": "Check fuse and search for short circuits."}, {"Code": "90", "Model(s)": "All", "Display / Message": "ERR. SCANNER", "Possible Cause": "Communication failure with scanner unit", "Troubleshooting / Remedy": "Restart machine; check scanner connections."}, {"Code": "91", "Model(s)": "All", "Display / Message": "ERR. PRINTER", "Possible Cause": "Communication failure with printer unit", "Troubleshooting / Remedy": "Check power supply and printer cable."}, {"Code": "92", "Model(s)": "All", "Display / Message": "ERR. PC / Error EDP", "Possible Cause": "Communication failure with external IT system", "Troubleshooting / Remedy": "Check machine-to-site IT connections."}, {"Code": "101", "Model(s)": "M3/M5", "Display / Message": "SERVICE-DATE", "Possible Cause": "Batch counter reached maintenance limit", "Troubleshooting / Remedy": "Complete service maintenance and reset counter"}];
 const db_gen5 = [{"Category": "Supply (SU)", "Error Code": "SU01", "Alarm Description": "Low Steam Supply", "Alarm Details": "Steam supply is below minimum pressure. Triggers an automatic cycle abort if detected during active phases (disabled in Standby per SB 166)."}, {"Category": "Supply (SU)", "Error Code": "SU02", "Alarm Description": "Low Air Supply", "Alarm Details": "Compressed air supply is below minimum pressure. Triggers an automatic cycle abort during active phases."}, {"Category": "Supply (SU)", "Error Code": "SU03", "Alarm Description": "Low Water Supply", "Alarm Details": "Water flow is below the minimum required value for the condenser or vacuum pump."}, {"Category": "Supply (SU)", "Error Code": "SU11", "Alarm Description": "High Steam Supply", "Alarm Details": "External steam supply exceeds the maximum safety setpoint."}, {"Category": "Supply (SU)", "Error Code": "SU12", "Alarm Description": "High Air Supply", "Alarm Details": "External compressed air supply exceeds the maximum safety setpoint."}, {"Category": "Supply (SU)", "Error Code": "SU13", "Alarm Description": "High Water Supply", "Alarm Details": "External water flow rate exceeds the maximum safety setpoint."}, {"Category": "Power (PW)", "Error Code": "PW01", "Alarm Description": "Power Interruption", "Alarm Details": "A power loss was detected during an active cycle. Logic maintains Door Cover state (In/Out) upon power restoration."}, {"Category": "AutoStart (AF)", "Error Code": "AF01", "Alarm Description": "AutoStart Heating Timeout", "Alarm Details": "Generator failed to heat within the allotted time for AutoStart."}, {"Category": "AutoStart (AF)", "Error Code": "AF11 / AF21", "Alarm Description": "AutoStart Failed", "Alarm Details": "AutoStart failed because Door 1 or Door 2 was left open."}, {"Category": "Generator (GE)", "Error Code": "GE01", "Alarm Description": "Generator Over Pressure", "Alarm Details": "Generator pressure exceeded the maximum allowance."}, {"Category": "Generator (GE)", "Error Code": "GE02", "Alarm Description": "Generator Over Temp", "Alarm Details": "Generator temperature exceeded the maximum safety limit."}, {"Category": "Generator (GE)", "Error Code": "GE03", "Alarm Description": "Generator Low Water", "Alarm Details": "Steam generator detected a dangerously low water level."}, {"Category": "Generator (GE)", "Error Code": "GE05", "Alarm Description": "Generator Heating Fault", "Alarm Details": "Generator took too long to reach operating pressure."}, {"Category": "Generator (GE)", "Error Code": "GE55", "Alarm Description": "Generator Level Sensor", "Alarm Details": "Level probe is disconnected or reading out of range."}, {"Category": "Generator (GE)", "Error Code": "GE99", "Alarm Description": "Press/Temp Alignment", "Alarm Details": "Generator pressure and temperature readings do not match."}, {"Category": "Clean Steam (CS)", "Error Code": "CS01", "Alarm Description": "Clean Steam Fill", "Alarm Details": "Clean steam pre-heat tank took too long to fill."}, {"Category": "Clean Steam (CS)", "Error Code": "CS02", "Alarm Description": "Clean Steam Heating", "Alarm Details": "Pre-heat tank took too long to reach operating temperature."}, {"Category": "Clean Steam (CS)", "Error Code": "CS03", "Alarm Description": "Clean Steam Pressure", "Alarm Details": "Clean steam generator failed to reach pressure."}, {"Category": "Door (DR)", "Error Code": "DR11 / DR21", "Alarm Description": "Operation Timeout", "Alarm Details": "Door 1 or Door 2 took too long to fully open or close."}, {"Category": "Door (DR)", "Error Code": "DR12 / DR22", "Alarm Description": "Encroachment Error", "Alarm Details": "Light curtain beam was broken by an object during door movement."}, {"Category": "Door (DR)", "Error Code": "DR13 / DR23", "Alarm Description": "Door Setup Error", "Alarm Details": "Incorrect gearbox or drive ratio settings detected in software."}, {"Category": "Door (DR)", "Error Code": "DR14 / DR24", "Alarm Description": "High Torque", "Alarm Details": "Motor detected a rapid change in torque required for movement."}, {"Category": "Door (DR)", "Error Code": "DR15 / DR25", "Alarm Description": "Obstruction Error", "Alarm Details": "Door movement stopped due to a physical obstruction."}, {"Category": "Door (DR)", "Error Code": "DR16 / DR26", "Alarm Description": "Cover Retract Fault", "Alarm Details": "The decorative door cover failed to retract."}, {"Category": "Door (DR)", "Error Code": "DR17 / DR27", "Alarm Description": "Panel Open", "Alarm Details": "The external service panel is open or the microswitch is not engaged."}, {"Category": "Door (DR)", "Error Code": "DR19 / DR29", "Alarm Description": "Cover Inflate Fault", "Alarm Details": "The decorative door cover failed to inflate/expand."}, {"Category": "Gasket (GK)", "Error Code": "GK01", "Alarm Description": "Low Gasket Pressure", "Alarm Details": "Gasket has not inflated to the minimum required air pressure."}, {"Category": "Gasket (GK)", "Error Code": "GK02", "Alarm Description": "Excessive Gasket Pressure", "Alarm Details": "Gasket pressure has exceeded the maximum safety limit."}, {"Category": "Pulse (PE)", "Error Code": "PE01", "Alarm Description": "Vacuum Pulse Timeout", "Alarm Details": "The vacuum pulse failed to reach the target level in time."}, {"Category": "Pulse (PE)", "Error Code": "PE02", "Alarm Description": "Pressure Pulse Timeout", "Alarm Details": "The pressure pulse failed to reach the target level in time."}, {"Category": "Pulse (PE)", "Error Code": "PE05", "Alarm Description": "Excessive Pulses", "Alarm Details": "The cycle exceeded the pulse limit (40) without reaching target temp."}, {"Category": "Sterilize (ST)", "Error Code": "ST01", "Alarm Description": "Steam Charge Warning", "Alarm Details": "The stage is nearing a timeout fault before reaching sterilize temp."}, {"Category": "Sterilize (ST)", "Error Code": "ST02", "Alarm Description": "Steam Charge Timeout", "Alarm Details": "The stage took too long to reach the sterilizing temperature."}, {"Category": "Sterilize (ST)", "Error Code": "ST03", "Alarm Description": "Low Sterilize Temp", "Alarm Details": "Chamber temperature fell below the minimum during the sterilize stage."}, {"Category": "Sterilize (ST)", "Error Code": "ST04", "Alarm Description": "Over Temperature", "Alarm Details": "Chamber temperature exceeded the maximum limit during sterilization."}, {"Category": "Sterilize (ST)", "Error Code": "ST05", "Alarm Description": "Sterilize - Residual Air", "Alarm Details": "Difference between Air Detector and Drain probes is >2°C."}, {"Category": "Air Detector (AD/AE/OK)", "Error Code": "AD01", "Alarm Description": "Air Detector Sterilize", "Alarm Details": "The Air Detector Test failed to detect air when it was expected."}, {"Category": "Air Detector (AD/AE/OK)", "Error Code": "OK01", "Alarm Description": "Air Detected", "Alarm Details": "Air detected during an Air Detector type cycle (Expected Result)."}, {"Category": "Air Detector (AD/AE/OK)", "Error Code": "AE01", "Alarm Description": "Excessive Air Fault", "Alarm Details": "Excessive air detected during the Air Admission Stage."}, {"Category": "Air Detector (AD/AE/OK)", "Error Code": "AE02", "Alarm Description": "Air Detect Calibration", "Alarm Details": "Air Detector reached temperature during a SMART cycle; needs calibration."}, {"Category": "Vacuum (VT)", "Error Code": "VT03", "Alarm Description": "Exhaust Vacuum Timeout", "Alarm Details": "The exhaust stage took too long to reach the vacuum setpoint."}, {"Category": "Vacuum (VT)", "Error Code": "VT04", "Alarm Description": "Drying Vacuum Timeout", "Alarm Details": "The drying stage took too long to achieve the required vacuum level."}, {"Category": "System (UA/SB/LR)", "Error Code": "UA01", "Alarm Description": "User Abort", "Alarm Details": "The cycle was manually stopped by an operator."}, {"Category": "System (UA/SB/LR)", "Error Code": "SB01", "Alarm Description": "Stabilize Fault", "Alarm Details": "Pressure change >10.8 kPa during the 5-minute stabilize stage."}, {"Category": "System (UA/SB/LR)", "Error Code": "LR01", "Alarm Description": "Excessive Leak", "Alarm Details": "Pressure change >1.3 kPa during a 10-minute leak rate test."}];
 const db_tan = [{"Code":"AF01","Category":"AutoStart System","Error":"AutoStart Heating Timeout","Cause":"Generator fault or incorrect settings","Action":"Check generator operation and settings; contact Atherton if required"},{"Code":"AF11","Category":"Door System","Error":"AutoStart Failed Door 1","Cause":"Door 1 open during AutoStart sequence","Action":"Close door and run daily test cycles manually"},{"Code":"AF21","Category":"Door System","Error":"AutoStart Failed Door 2","Cause":"Door 2 open during AutoStart sequence","Action":"Close door and run daily test cycles manually"},{"Code":"SB01","Category":"Pressure Control","Error":"Stabilize Fault","Cause":"Excessive pressure change during stabilize stage","Action":"Check valves and pipework for leaks"},{"Code":"DR13","Category":"Door System","Error":"Door 1 Setup Error","Cause":"Incorrect scaling ratio or axis parameters","Action":"Check Door 1 axis settings in program"},{"Code":"DR23","Category":"Door System","Error":"Door 2 Setup Error","Cause":"Incorrect scaling ratio or axis parameters","Action":"Check Door 2 axis settings in program"},{"Code":"GE99","Category":"Generator System","Error":"Generator Pressure Temperature Fault","Cause":"Pressure and temperature outside operating band","Action":"Check temperature probe or pressure gauge"},{"Code":"GE55","Category":"Generator System","Error":"Generator Level Sensor Fault","Cause":"Sensor disconnected or water level issue","Action":"Check coaxial cable connections and water level"},{"Code":"AD##","Category":"Electronics","Error":"Analogue Card Disconnect","Cause":"Analogue card or channel wiring disconnected","Action":"Check wiring to analogue card"},{"Code":"TC##","Category":"Electronics","Error":"Temperature Card Disconnect","Cause":"RTD wiring disconnected from temperature card","Action":"Check RTD sensor wiring"},{"Code":"PE05","Category":"Cycle Control","Error":"Excessive Pulses","Cause":"Target temperature not reached during warm up pulses","Action":"Check condensate waste temperature and pulsing efficiency"},{"Code":"OK01","Category":"Air Detection","Error":"Air Detected","Cause":"Air detected during air detector test cycle","Action":"None expected result for this cycle"},{"Code":"PR01","Category":"Pressure Control","Error":"Pressure Range Fault","Cause":"Theoretical pressure option enabled incorrectly","Action":"Disable option in log and pressure calculation menu"},{"Code":"VC01","Category":"Vacuum System","Error":"Vacuum Timeout","Cause":"Vacuum pump issue water supply failure or air leak","Action":"Check pump water supply valves and perform leak test"},{"Code":"PL01","Category":"Cycle Control","Error":"Pulses Abort","Cause":"Maximum pulses reached without reaching temperature","Action":"Check air leaks steam trap and air detector RTD position"},{"Code":"PT01","Category":"Pressure Control","Error":"Pressure Timeout","Cause":"Target pressure not reached during pulse stage","Action":"Verify steam supply minimum 400kPa and steam solenoid"},{"Code":"ST01","Category":"Steam System","Error":"Steam Warning","Cause":"Charge stage took too long","Action":"Check steam supply solenoid and steam trap"},{"Code":"HT01","Category":"Heating System","Error":"Heating Timeout","Cause":"Sterilizing temperature not reached in time","Action":"Check steam supply RTD calibration and leaks"},{"Code":"LT01","Category":"Temperature Control","Error":"Low Sterilizing Temperature","Cause":"Temperature dropped below setpoint during hold","Action":"Check steam supply solenoid and RTD placement"},{"Code":"OT01","Category":"Temperature Control","Error":"Over Temperature","Cause":"Temperature exceeded setpoint by 3 degrees","Action":"Check steam solenoid and RTD calibration"},{"Code":"EX01","Category":"Exhaust System","Error":"Exhaust Timeout","Cause":"Vacuum level not reached in time","Action":"Check exhaust solenoid vacuum pump and check valve"},{"Code":"LR01","Category":"Vacuum System","Error":"Failed Leak Rate Test","Cause":"Vacuum leak exceeding allowed rate","Action":"Check drain check valve air filter solenoid and fittings"},{"Code":"GK01","Category":"Door System","Error":"Gasket Warning","Cause":"Sealing pressure not reached in time","Action":"Check steam supply pressure switch and gasket solenoids"},{"Code":"GK02","Category":"Door System","Error":"Steam Leak From Gasket","Cause":"Wet steam misaligned door or damaged gasket","Action":"Install steam trap realign door or replace gasket"},{"Code":"DR01","Category":"Door System","Error":"Door Error End Of Cycle","Cause":"Door moved away from sensor or faulty sensor","Action":"Adjust or replace door sensor"},{"Code":"DR02","Category":"Door System","Error":"Door Detected Open","Cause":"Input card power or wiring issue","Action":"Check wiring and 24V supply"},{"Code":"DR03","Category":"Door System","Error":"Door Obstruction","Cause":"Door leading edge or cable sensor activated","Action":"Check actuator fuse and adjust door cables"},{"Code":"HM01","Category":"HMI System","Error":"Touch Screen Communication Error","Cause":"Disconnected or damaged communication cable","Action":"Inspect cable and solder connections"},{"Code":"HM02","Category":"HMI System","Error":"Lost Program","Cause":"Power interruption or faulty screen","Action":"Reload program or replace screen"},{"Code":"HM03","Category":"HMI System","Error":"Screen Booting Stuck","Cause":"Faulty screen or boot process failure","Action":"Perform hard reset replace screen if needed"},{"Code":"HM04","Category":"HMI System","Error":"Screen Initializing Stuck","Cause":"Screen memory error or PLC fault","Action":"Replace screen or PLC"},{"Code":"HM05","Category":"HMI System","Error":"Black Screen Firmware Issue","Cause":"Firmware glitch or faulty backlight","Action":"Restart system or upgrade firmware"},{"Code":"HM06","Category":"HMI System","Error":"SD Card Mode Failure","Cause":"Internal write failure","Action":"Technician service required"},{"Code":"HM07","Category":"Printer System","Error":"Printer Not Printing","Cause":"Printer disconnected paper jam or cable issue","Action":"Check printer cable paper and connection"},{"Code":"LW01","Category":"Generator System","Error":"Low Water Level","Cause":"Water level below safe limit","Action":"Check pump and water supply minimum 200kPa"},{"Code":"LS01","Category":"Generator System","Error":"Level Sensor Open Circuit","Cause":"Disconnected cable or low water level","Action":"Check sensor wiring and water level"},{"Code":"LS02","Category":"Generator System","Error":"Level Sensor Stuck Value","Cause":"Sensor reading unchanged indicating failure","Action":"Replace level sensor"},{"Code":"GN01","Category":"Generator System","Error":"Generator Not Ready","Cause":"Blowdown valve leaking or pressure switch fault","Action":"Check blowdown solenoid and thermostat"},{"Code":"GN02","Category":"Generator System","Error":"Generator Heating Elements Fault","Cause":"Float switch or contactor jammed","Action":"Check float switch contactor and water filter"}];
-const db_pan = [{"Unit S/N": "PAN2001", "Hospital": "City General", "Location": "Ward 3B", "Install Date": "01/15/2020", "Next Service": "07/15/2024"}, {"Unit S/N": "PAN2005", "Hospital": "Mercy Clinic", "Location": "ICU Area A", "Install Date": "03/22/2021", "Next Service": "09/22/2024"}, {"Unit S/N": "PAN2012", "Hospital": "St. Jude's", "Location": "Emergency Dept.", "Install Date": "11/05/2019", "Next Service": "05/05/2024"}, {"Unit S/N": "PAN2034", "Hospital": "County Hospital", "Location": "Operating Room 2", "Install Date": "08/10/2022", "Next Service": "02/10/2025"}, {"Unit S/N": "PAN2050", "Hospital": "Children's Med Center", "Location": "Pediatrics Wing", "Install Date": "02/28/2023", "Next Service": "08/28/2024"}, {"Unit S/N": "PAN2088", "Hospital": "Valley Health", "Location": "Endoscopy Suite", "Install Date": "06/14/2018", "Next Service": "12/14/2024"}, {"Unit S/N": "PAN2101", "Hospital": "Regional Medical", "Location": "Central Sterilization", "Install Date": "09/01/2021", "Next Service": "03/01/2025"}];
+const db_pan = [{"Unit S/N":"220132336205","Hospital":"Hollywood Private Hospital","Block":"Bell (I)","Ward":"Bell Day Centre","Level":"G","Room":"Dirty Utility","Comments":"Location: Junior Doctors Treatment Room."},{"Unit S/N":"170632336287","Hospital":"Hollywood Private Hospital","Block":"Brislee Wing (D)","Ward":"Percival Gratwick","Level":"1","Room":"Dirty Utility","Comments":"9.7A, 92.5, 5:39"},{"Unit S/N":"80842336360","Hospital":"Hollywood Private Hospital","Block":"Brislee Wing (D)","Ward":"George Gosse Ward","Level":"1","Room":"Dirty Utility","Comments":"10A, 92.8, 5:42"},{"Unit S/N":"200932336218","Hospital":"Hollywood Private Hospital","Block":"Brislee Wing (D)","Ward":"Mark Donaldson ward","Level":"G","Room":"Dirty Utility","Comments":"9.7A, 93.2, 6:12"},{"Unit S/N":"80842336357","Hospital":"Hollywood Private Hospital","Block":"Brislee Wing (D)","Ward":"Starcevich Ward (West)","Level":"G","Room":"Dirty Utility","Comments":"9.9A, 93.2, 5:48"},{"Unit S/N":"80842336359","Hospital":"Hollywood Private Hospital","Block":"Brislee Wing (D)","Ward":"Hughie Edwards East","Level":"LG","Room":"Dirty Utility","Comments":"9.4A, 93.2, 5:36"},{"Unit S/N":"80842336358","Hospital":"Hollywood Private Hospital","Block":"Brislee Wing (D)","Ward":"Hughie Edwards Ward","Level":"LG","Room":"Dirty Utility","Comments":"9.7A, 92.2, 5:19"},{"Unit S/N":"251132336223","Hospital":"Hollywood Private Hospital","Block":"Bullwinkel Wing (A)","Ward":"Charles Pop Ward","Level":"1","Room":"Dirty Utility","Comments":"Replaced S/N 071041750990 on 10/12/2025 (9.2A, 93.1, 5:56)"},{"Unit S/N":"130432336263","Hospital":"Hollywood Private Hospital","Block":"Bullwinkel Wing (A)","Ward":"Thomas Axford Ward","Level":"1","Room":"Dirty Utility","Comments":"9.7A, 93.2, 5:48"},{"Unit S/N":"150632336284","Hospital":"Hollywood Private Hospital","Block":"Bullwinkel Wing (A)","Ward":"Henry Murray Ward","Level":"2","Room":"Dirty Utility","Comments":"9.6A, 92.2, 5:19"},{"Unit S/N":"180832336216","Hospital":"Hollywood Private Hospital","Block":"Bullwinkel Wing (A)","Ward":"Goldsworthy Ward","Level":"2","Room":"Dirty Utility","Comments":"9.3A, 93.7, 6:11"},{"Unit S/N":"221132336221","Hospital":"Hollywood Private Hospital","Block":"Bullwinkel Wing (A)","Ward":"Cath Lab","Level":"G","Room":"Dirty Utility","Comments":"Also known as: CCL Cardiac Catheter Lab N 7. (9.3A, 92.6, 5:56)"},{"Unit S/N":"250332336231","Hospital":"Hollywood Private Hospital","Block":"Bullwinkel Wing (A)","Ward":"Day Procedure Unit","Level":"G","Room":"Dirty Utility","Comments":"Located within Day Surgery Unit (DSU). 9.3A, 93.4, 5:23"},{"Unit S/N":"250332336235","Hospital":"Hollywood Private Hospital","Block":"Bullwinkel Wing (A)","Ward":"Theater Room","Level":"G","Room":"Dirty Utility","Comments":"Also known as: Bullwinkel Operation Room. 9.7A, 92.2, 6:58"},{"Unit S/N":"180832336215","Hospital":"Hollywood Private Hospital","Block":"Bullwinkel Wing (A)","Ward":"Intensive Care (ICU)","Level":"G","Room":"Dirty Utility","Comments":"9.4A, 92.3, 5:39"},{"Unit S/N":"180432336246","Hospital":"Hollywood Private Hospital","Block":"Bullwinkel Wing (A)","Ward":"Coronary Care Unit (CCU)","Level":"G","Room":"Dirty Utility","Comments":"Can Be accessed from ICU (9.4A, 92.3, 6:12)"},{"Unit S/N":"191232336292","Hospital":"Hollywood Private Hospital","Block":"Endoscopy Suite (H)","Ward":"Endoscopy Ward","Level":"3","Room":"Dirty Utility","Comments":"Located within Holding Recovery (Ask reception if needed)"},{"Unit S/N":"191232336200","Hospital":"Hollywood Private Hospital","Block":"Fenwick Day Unit (E)","Ward":"Edis Ward","Level":"G","Room":"Dirty Utility","Comments":"Pass second main door, take elevator to G floor. (9.9A)"},{"Unit S/N":"190832336218","Hospital":"Hollywood Private Hospital","Block":"Leach Wing (C)","Ward":"John Carrol Ward","Level":"1","Room":"Dirty Utility","Comments":"9.4A, 91.1, 6:12min"},{"Unit S/N":"130432336258","Hospital":"Hollywood Private Hospital","Block":"Leach Wing (C)","Ward":"Clifford Sadler Ward","Level":"1","Room":"Dirty Utility","Comments":""},{"Unit S/N":"230432336224","Hospital":"Hollywood Private Hospital","Block":"Leach Wing (C)","Ward":"Day Surgery Unit (DSU)","Level":"2","Room":"Dirty Utility","Comments":""},{"Unit S/N":"150832336242","Hospital":"Hollywood Private Hospital","Block":"Leach Wing (C)","Ward":"Jim Gordon Ward","Level":"2","Room":"Dirty Utility","Comments":""},{"Unit S/N":"191132336258","Hospital":"Hollywood Private Hospital","Block":"Leach Wing (C)","Ward":"James Wood Ward","Level":"3","Room":"Dirty Utility","Comments":""},{"Unit S/N":"150732336232","Hospital":"Hollywood Private Hospital","Block":"Leach Wing (C)","Ward":"Stan Gurney Ward","Level":"3","Room":"Dirty Utility","Comments":""},{"Unit S/N":"150832336255","Hospital":"Hollywood Private Hospital","Block":"Leach Wing (C)","Ward":"George Howell Ward","Level":"4","Room":"Dirty Utility","Comments":"Closed - Call 9346 6290 (Pin: 369), 9.9A, 6:18, 93.2"},{"Unit S/N":"150632336292","Hospital":"Hollywood Private Hospital","Block":"Leach Wing (C)","Ward":"Staff Only: Theatres","Level":"UG","Room":"Dirty Utility","Comments":"Also known as: Pacu Leach."},{"Unit S/N":"210432336238","Hospital":"Hollywood Private Hospital","Block":"Pering Wing (B)","Ward":"Emergency","Level":"LG","Room":"Dirty Utility","Comments":"9.2A, 9.2, 5:49min"},{"Unit S/N":"210432336236","Hospital":"Hollywood Private Hospital","Block":"Pering Wing (B)","Ward":"O Meara Ward","Level":"1","Room":"Dirty Utility","Comments":"9.2A, 9.2, 6:32min"},{"Unit S/N":"210432336234","Hospital":"Hollywood Private Hospital","Block":"Pering Wing (B)","Ward":"Mc Carthy Ward","Level":"2","Room":"Dirty Utility","Comments":"9.8A"},{"Unit S/N":"230432336222","Hospital":"Hollywood Private Hospital","Block":"Pering Wing (B)","Ward":"Bagot","Level":"3","Room":"Dirty Utility","Comments":"9.0A, 91.4, 5:46min"},{"Unit S/N":"31241750923","Hospital":"Hollywood Private Hospital","Block":"Ramsay Clinic (E)","Ward":"Ferguson Ward","Level":"G","Room":"Dirty Utility","Comments":"Hot Water Pump faulty, possible float valve replacement."},{"Unit S/N":"120832336216","Hospital":"Joondalup Health Campus","Block":"A","Ward":"A1","Level":"1","Room":"Dirty Utility","Comments":""},{"Unit S/N":"250832336282","Hospital":"Joondalup Health Campus","Block":"A","Ward":"A1","Level":"1","Room":"Dirty Utility","Comments":"Installed on 17/09/2025"},{"Unit S/N":"131132336204","Hospital":"Joondalup Health Campus","Block":"A","Ward":"A2 Maternity","Level":"2","Room":"Dirty Utility","Comments":""},{"Unit S/N":"140132336213","Hospital":"Joondalup Health Campus","Block":"A","Ward":"Public Obstetrics","Level":"2","Room":"Dirty Utility","Comments":"Birth Suit"},{"Unit S/N":"150732336219","Hospital":"Joondalup Health Campus","Block":"A","Ward":"Paediatrics","Level":"3","Room":"Dirty Utility","Comments":""},{"Unit S/N":"190832336222","Hospital":"Joondalup Health Campus","Block":"A","Ward":"Physiotherapy","Level":"G","Room":"Dirty Utility","Comments":"Under Renovation"},{"Unit S/N":"140332336270","Hospital":"Joondalup Health Campus","Block":"C","Ward":"Public Medical","Level":"1","Room":"Dirty Utility","Comments":""},{"Unit S/N":"161032336254","Hospital":"Joondalup Health Campus","Block":"C","Ward":"Public Medical","Level":"1","Room":"Dirty Utility","Comments":""},{"Unit S/N":"110542336250","Hospital":"Joondalup Health Campus","Block":"C","Ward":"Public Orthopaedic","Level":"2","Room":"Dirty Utility","Comments":""},{"Unit S/N":"110542336253","Hospital":"Joondalup Health Campus","Block":"C","Ward":"Public Orthopaedic","Level":"2","Room":"Dirty Utility","Comments":""},{"Unit S/N":"190832336206","Hospital":"Joondalup Health Campus","Block":"C","Ward":"Orthopaedic","Level":"2","Room":"Dirty Utility","Comments":""},{"Unit S/N":"100642336255","Hospital":"Joondalup Health Campus","Block":"C","Ward":"Medical Stroke","Level":"3","Room":"Dirty Utility","Comments":""},{"Unit S/N":"150732336212","Hospital":"Joondalup Health Campus","Block":"C","Ward":"Dialysis","Level":"3","Room":"Dirty Utility","Comments":""},{"Unit S/N":"160532336280","Hospital":"Joondalup Health Campus","Block":"C","Ward":"Stroke","Level":"3","Room":"Dirty Utility","Comments":""},{"Unit S/N":"240732336280","Hospital":"Joondalup Health Campus","Block":"D","Ward":"Day Procedure","Level":"1","Room":"Dirty Utility","Comments":""},{"Unit S/N":"190832336202","Hospital":"Joondalup Health Campus","Block":"D","Ward":"Public Rehab","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"210632336241","Hospital":"Joondalup Health Campus","Block":"E","Ward":"Emergency D-Pod","Level":"0","Room":"Dirty Utility","Comments":"Green Line"},{"Unit S/N":"230732336280","Hospital":"Joondalup Health Campus","Block":"E","Ward":"Emergency Resus","Level":"0","Room":"Dirty Utility","Comments":"Blue Line"},{"Unit S/N":"231232336254","Hospital":"Joondalup Health Campus","Block":"E","Ward":"Emergency (Next to C8)","Level":"0","Room":"Dirty Utility","Comments":"Red Line"},{"Unit S/N":"100642336254A","Hospital":"Joondalup Health Campus","Block":"E","Ward":"Emergency MHOA","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"171032336253","Hospital":"Joondalup Health Campus","Block":"E","Ward":"Emergency F-Pod","Level":"G","Room":"Dirty Utility","Comments":"Blue Line"},{"Unit S/N":"110642336264","Hospital":"Joondalup Health Campus","Block":"F","Ward":"ICU","Level":"1","Room":"Dirty Utility","Comments":""},{"Unit S/N":"240932336202","Hospital":"Joondalup Health Campus","Block":"F","Ward":"Theatre Recovery","Level":"1","Room":"Dirty Utility","Comments":""},{"Unit S/N":"110642336265","Hospital":"Joondalup Health Campus","Block":"F","Ward":"Theatre Recovery","Level":"1","Room":"Dirty Utility","Comments":""},{"Unit S/N":"130132336205","Hospital":"Joondalup Health Campus","Block":"H","Ward":"Private Rehab","Level":"0","Room":"Dirty Utility","Comments":""},{"Unit S/N":"130132336204","Hospital":"Joondalup Health Campus","Block":"H","Ward":"Private Obstetrics","Level":"1","Room":"Dirty Utility","Comments":""},{"Unit S/N":"130132336207","Hospital":"Joondalup Health Campus","Block":"H","Ward":"Private Birthing","Level":"1","Room":"Dirty Utility","Comments":""},{"Unit S/N":"130132336209","Hospital":"Joondalup Health Campus","Block":"H","Ward":"Private Surgical","Level":"2","Room":"Dirty Utility","Comments":""},{"Unit S/N":"130132336208","Hospital":"Joondalup Health Campus","Block":"H","Ward":"Private Surgical","Level":"3","Room":"Dirty Utility","Comments":""},{"Unit S/N":"130132336206","Hospital":"Joondalup Health Campus","Block":"H","Ward":"Private Medicine","Level":"4","Room":"Dirty Utility","Comments":""},{"Unit S/N":"240932336219","Hospital":"Joondalup Health Campus","Block":"K","Ward":"CCU","Level":"1","Room":"Dirty Utility","Comments":""},{"Unit S/N":"240932336203","Hospital":"Joondalup Health Campus","Block":"K","Ward":"Antenatal Clinic / K Ward","Level":"2","Room":"Dirty Utility","Comments":""},{"Unit S/N":"100642336258","Hospital":"Joondalup Health Campus","Block":"L","Ward":"Wanneroo Complex Care","Level":"0","Room":"Dirty Utility","Comments":""},{"Unit S/N":"220232336236","Hospital":"Joondalup Health Campus","Block":"L","Ward":"Wanneroo Surgical","Level":"1","Room":"Dirty Utility","Comments":""},{"Unit S/N":"211032336216","Hospital":"Joondalup Health Campus","Block":"L","Ward":"Wanneroo Medical","Level":"2","Room":"Dirty Utility","Comments":""},{"Unit S/N":"230532336248","Hospital":"Joondalup Health Campus","Block":"M","Ward":"Mental Health Older Adult","Level":"0","Room":"Dirty Utility","Comments":""},{"Unit S/N":"230532336258","Hospital":"Joondalup Health Campus","Block":"M","Ward":"Mental Health","Level":"1","Room":"Dirty Utility","Comments":""},{"Unit S/N":"130332336236","Hospital":"Joondalup Health Campus","Block":"O","Ward":"Oncology","Level":"0","Room":"Dirty Utility","Comments":""},{"Unit S/N":"100642336254B","Hospital":"Joondalup Health Campus","Block":"C","Ward":"Special Care","Level":"","Room":"","Comments":"No longer in system (most likely removed)"},{"Unit S/N":"130732336248","Hospital":"Buckley Caring Centre - Amaroo Village","Block":"Jarrah","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"161032336263","Hospital":"Buckley Caring Centre - Amaroo Village","Block":"Tuart North","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"161032336269","Hospital":"Buckley Caring Centre - Amaroo Village","Block":"Tuart South","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"1107412336288","Hospital":"Buckley Caring Centre - Amaroo Village","Block":"Karri","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"161032336251","Hospital":"Buckley Caring Centre - Amaroo Village","Block":"Wandoo North","Ward":"","Level":"1","Room":"Dirty Utility","Comments":""},{"Unit S/N":"161032336256","Hospital":"Buckley Caring Centre - Amaroo Village","Block":"Wandoo South","Ward":"","Level":"1","Room":"Dirty Utility","Comments":""},{"Unit S/N":"P042803-3","Hospital":"Attadale Rehabilitation Hospital (Ramsay)","Block":"-","Ward":"","Level":"G","Room":"Patient Equipment Room","Comments":""},{"Unit S/N":"130832336283","Hospital":"Bethesda Hospital","Block":"Recovery","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"130832336285","Hospital":"Bethesda Hospital","Block":"Riviera","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"150232336239","Hospital":"Bethesda Hospital","Block":"Recovery Second Stage","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"220632336270","Hospital":"Bethesda Hospital","Block":"Bayview - Palliative Care","Ward":"","Level":"1","Room":"Dirty Utility","Comments":""},{"Unit S/N":"150832336253","Hospital":"Bull Creek Transition (Amana Living)","Block":"Bull Creek","Ward":"","Level":"G","Room":"Utility Room","Comments":"Rear Enter Pin: 6149, Main door pin: 0022#"},{"Unit S/N":"80842336348","Hospital":"Lefroy Hostel & Respite Centre (Amana Living)","Block":"Lefroy Hostel","Ward":"","Level":"G","Room":"Utility Room","Comments":"Leaking from main drain & Jack."},{"Unit S/N":"31041750908","Hospital":"McMahon Caring Centre - Amaroo Village","Block":"Gasgoyne","Ward":"","Level":"G","Room":"Pan Room","Comments":""},{"Unit S/N":"70841750963","Hospital":"McMahon Caring Centre - Amaroo Village","Block":"Ashburton","Ward":"","Level":"G","Room":"Pan Room","Comments":""},{"Unit S/N":"170532336237","Hospital":"McMahon Caring Centre - Amaroo Village","Block":"Murchison","Ward":"","Level":"G","Room":"Pan Room","Comments":""},{"Unit S/N":"50741750963","Hospital":"Regents Garden Booragoon","Block":"-","Ward":"","Level":"G","Room":"Dirty Utility 1","Comments":""},{"Unit S/N":"100642336254C","Hospital":"Regents Garden Booragoon","Block":"-","Ward":"","Level":"G","Room":"Dirty Utility 3","Comments":""},{"Unit S/N":"210732336275","Hospital":"Regents Garden Booragoon","Block":"-","Ward":"","Level":"G","Room":"Dirty Utility 2","Comments":""},{"Unit S/N":"171032336243","Hospital":"Meath Care - Como","Block":"","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"171032336247","Hospital":"Meath Care - Como","Block":"","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"171132336271","Hospital":"Meath Care - Como","Block":"Sheoak House","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"171132336276","Hospital":"Meath Care - Como","Block":"","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"160832336215","Hospital":"Quadriplegic Centre Para-Quad","Block":"Gascoyne West","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"161032336259","Hospital":"Quadriplegic Centre Para-Quad","Block":"Jack O'Keefe Hotel","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"101242336211","Hospital":"St Georges Home (Amana Living)","Block":"House 2","Ward":"","Level":"G","Room":"Laundry Room","Comments":"Exit Pin: 1920, LR PIN: 1920"},{"Unit S/N":"201232336241","Hospital":"St Georges Home (Amana Living)","Block":"House 5","Ward":"","Level":"G","Room":"Laundry Room","Comments":"LR PIN: 1029, 1920"},{"Unit S/N":"201232336242","Hospital":"St Georges Home (Amana Living)","Block":"House 4","Ward":"","Level":"G","Room":"Laundry Room","Comments":"LR PIN: 1029"},{"Unit S/N":"220432336247","Hospital":"St Georges Home (Amana Living)","Block":"House 3","Ward":"","Level":"G","Room":"Laundry Room","Comments":"LR PIN: 2019"},{"Unit S/N":"220432336250","Hospital":"St Georges Home (Amana Living)","Block":"House 1","Ward":"","Level":"G","Room":"Laundry Room","Comments":"Exit Pin: 1289, LR PIN: 1920, Pan Room: 2190"},{"Unit S/N":"91142336318","Hospital":"Regents Garden Aubin Grove","Block":"Bloomington","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"110942336201","Hospital":"Regents Garden Aubin Grove","Block":"Claridges","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"91142336319","Hospital":"Regents Garden Aubin Grove","Block":"Dorchester","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"110942336209","Hospital":"Regents Garden Aubin Grove","Block":"Excelsior","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"250832336280","Hospital":"Regents Garden Aubin Grove","Block":"Astoria","Ward":"","Level":"G","Room":"Dirty Utility","Comments":"Old S/N: 090942336393"},{"Unit S/N":"150532336267","Hospital":"Italian Aged Care","Block":"Nursing Home East","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"180632336288","Hospital":"Italian Aged Care","Block":"Sicare","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"180632336289","Hospital":"Italian Aged Care","Block":"Nursing Home West","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"190232336221","Hospital":"Italian Aged Care","Block":"Casa Cab","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"190232336233","Hospital":"Italian Aged Care","Block":"Casa Cab","Ward":"","Level":"2","Room":"Dirty Utility","Comments":""},{"Unit S/N":"190232336237","Hospital":"Italian Aged Care","Block":"Casa Cab","Ward":"","Level":"1","Room":"Dirty Utility","Comments":""},{"Unit S/N":"170832336203","Hospital":"Regents Garden Scarborough","Block":"Penthouse Paloma","Ward":"","Level":"4","Room":"Utility P2","Comments":"Elevator PIN: 2323"},{"Unit S/N":"170832336207","Hospital":"Regents Garden Scarborough","Block":"Penthouse Pinamar","Ward":"","Level":"4","Room":"Utility P1","Comments":"Elevator PIN: 2323"},{"Unit S/N":"170832336205","Hospital":"Regents Garden Scarborough","Block":"Tivoli","Ward":"","Level":"3","Room":"Utility 3A","Comments":"Elevator PIN: 2323"},{"Unit S/N":"170832336208","Hospital":"Regents Garden Scarborough","Block":"Touloun","Ward":"","Level":"3","Room":"Utility 3B","Comments":"Elevator PIN: 2323"},{"Unit S/N":"170832336202","Hospital":"Regents Garden Scarborough","Block":"Selin","Ward":"","Level":"2","Room":"Utility 2A","Comments":"Elevator PIN: 2323"},{"Unit S/N":"170832336206","Hospital":"Regents Garden Scarborough","Block":"Sanur","Ward":"","Level":"2","Room":"Utility 2B","Comments":"Elevator PIN: 2323"},{"Unit S/N":"170832336204","Hospital":"Regents Garden Scarborough","Block":"Fremont","Ward":"","Level":"1","Room":"Utility 1","Comments":"Elevator PIN: 2323"},{"Unit S/N":"180932336229","Hospital":"Juniper Korumup","Block":"Wattle","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"180932336230","Hospital":"Juniper Korumup","Block":"Bottlebrush","Ward":"","Level":"LF","Room":"Dirty Utility","Comments":""},{"Unit S/N":"180932336231","Hospital":"Juniper Korumup","Block":"Myrtle","Ward":"","Level":"1","Room":"Dirty Utility","Comments":""},{"Unit S/N":"180932336232","Hospital":"Juniper Korumup","Block":"","Ward":"","Level":"","Room":"Dirty Utility","Comments":""},{"Unit S/N":"191232336273","Hospital":"Mandurah Retirement Village Inc","Block":"Tuart House","Ward":"","Level":"G","Room":"Dirty Utility","Comments":"Contact: Mark 0408 110 321"},{"Unit S/N":"200932336236","Hospital":"Mandurah Retirement Village Inc","Block":"Karri House","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"200932336235","Hospital":"Mandurah Retirement Village Inc","Block":"Jarrah House","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"200932336223","Hospital":"Mandurah Retirement Village Inc","Block":"Jarrah House","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"180332336230","Hospital":"Mandurah Retirement Village Inc","Block":"Banksia","Ward":"","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"201232336244","Hospital":"Peter Arney Home (Amana Living)","Block":"House 1","Ward":"","Level":"","Room":"Cleaning Room","Comments":""},{"Unit S/N":"130332336230","Hospital":"Peter Arney Home (Amana Living)","Block":"House 2","Ward":"","Level":"","Room":"Cleaning Room","Comments":""},{"Unit S/N":"201232336243","Hospital":"Peter Arney Home (Amana Living)","Block":"House 3","Ward":"","Level":"","Room":"Cleaning Room","Comments":""},{"Unit S/N":"201232336245","Hospital":"Peter Arney Home (Amana Living)","Block":"House 4","Ward":"","Level":"","Room":"Cleaning Room","Comments":""},{"Unit S/N":"201232336247","Hospital":"Peter Arney Home (Amana Living)","Block":"Armstrong West","Ward":"","Level":"","Room":"Cleaning Room","Comments":""},{"Unit S/N":"980641750936","Hospital":"Bunbury Hospital","Block":"A","Ward":"Slaney","Level":"G","Room":"Dirty Utility","Comments":"0"},{"Unit S/N":"191132336254","Hospital":"Bunbury Hospital","Block":"A","Ward":"Granada","Level":"G","Room":"Dirty Utility","Comments":"936"},{"Unit S/N":"191132336253","Hospital":"Bunbury Hospital","Block":"A","Ward":"Wexford Nursery","Level":"G","Room":"Dirty Utility","Comments":"7155"},{"Unit S/N":"191132336267","Hospital":"Bunbury Hospital","Block":"A","Ward":"Ferns","Level":"G","Room":"Dirty Utility","Comments":"13051"},{"Unit S/N":"210232336219","Hospital":"Bunbury Hospital","Block":"A","Ward":"Granada","Level":"G","Room":"Dirty Utility","Comments":"1992"},{"Unit S/N":"191132336269","Hospital":"Bunbury Hospital","Block":"A","Ward":"Slaney","Level":"G","Room":"Dirty Utility","Comments":"6777"},{"Unit S/N":"11121166","Hospital":"Bunbury Hospital","Block":"AA","Ward":"Coronary Care Unit","Level":"G","Room":"Dirty Utility","Comments":"0"},{"Unit S/N":"130432336265","Hospital":"Bunbury Hospital","Block":"D","Ward":"BH - ICU","Level":"G","Room":"Dirty Utility","Comments":"61276, 92.4"},{"Unit S/N":"220232336234","Hospital":"Bunbury Hospital","Block":"D","Ward":"BH - ED","Level":"G","Room":"Dirty Utility","Comments":"28440, 92.7"},{"Unit S/N":"191132336252","Hospital":"Bunbury Hospital","Block":"G","Ward":"Medical Ward A","Level":"G","Room":"Dirty Utility","Comments":"8816"},{"Unit S/N":"220432336246","Hospital":"Bunbury Hospital","Block":"G","Ward":"Medical Ward A","Level":"G","Room":"Dirty Utility","Comments":"6229, 92.3"},{"Unit S/N":"220132336219","Hospital":"Bunbury Hospital","Block":"G","Ward":"Medical Ward B","Level":"G","Room":"Dirty Utility","Comments":"5701"},{"Unit S/N":"140332336285","Hospital":"Bunbury Hospital","Block":"GA","Ward":"Sub-Acute Ward","Level":"G","Room":"Dirty Utility","Comments":"Also known as Special Rehab Unit. 30330"},{"Unit S/N":"980741750954","Hospital":"Bunbury Hospital","Block":"J","Ward":"SJOGH - DUP","Level":"G","Room":"Recovery","Comments":""},{"Unit S/N":"200832336293","Hospital":"Bunbury Hospital","Block":"J","Ward":"BH - DPU","Level":"G","Room":"Dirty Utility","Comments":"10902, replaced elements, 92.7"},{"Unit S/N":"980641750939","Hospital":"Bunbury Hospital","Block":"N","Ward":"Renal / Consult Suites","Level":"1","Room":"Dirty Utility","Comments":"Same as cancer treatment department"},{"Unit S/N":"60641750934","Hospital":"Bunbury Hospital","Block":"","Ward":"Bedford Maternity","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"240932336225","Hospital":"Bunbury Hospital","Block":"BH","Ward":"ED","Level":"G","Room":"Dirty Utility","Comments":"1998"},{"Unit S/N":"90442336339","Hospital":"South Perth Hospital","Block":"Theatre/Recovery","Ward":"Theatre/Recovery","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"100442336222","Hospital":"South Perth Hospital","Block":"Canning Ward","Ward":"Canning Ward","Level":"G","Room":"Dirty Utility","Comments":""},{"Unit S/N":"980741751009","Hospital":"South Perth Hospital","Block":"Terrace Ward","Ward":"Terrace Ward","Level":"G","Room":"Dirty Utility","Comments":"Opposite room 35"},{"Unit S/N":"10441750920","Hospital":"South Perth Hospital","Block":"Terrace Ward","Ward":"Terrace Ward","Level":"G","Room":"Dirty Utility","Comments":"Opposite room 10 - decommissioned"},{"Unit S/N":"31141751012","Hospital":"South Perth Hospital","Block":"Park Main Ward","Ward":"Park Main Ward","Level":"G","Room":"Dirty Utility","Comments":""}];
 
 const db_ken = [{"Code":"20","Category":"Water Supply","Error":"Slow water filling 1","Cause":"Blocked inlet valve filter or low water pressure","Action":"Clean filter or install pressure pump"},{"Code":"21","Category":"Water Supply","Error":"Slow water filling 2","Cause":"Blocked inlet valve filter or low water pressure","Action":"Clean filter or install pressure pump"},{"Code":"24","Category":"Water Supply","Error":"Slow water filling 3","Cause":"Blocked inlet valve filter or low water pressure","Action":"Clean filter or install pressure pump"},{"Code":"22","Category":"Water Supply","Error":"Fill valves not closed","Cause":"Fill valves malfunctioning","Action":"Check valves"},{"Code":"23","Category":"Drainage","Error":"Slow draining","Cause":"Drain blockage water trap or defective drain valve","Action":"Clean filter check drainage system or check valve"},{"Code":"25","Category":"Water Supply","Error":"No water filling 1","Cause":"Stop valve closed inlet valve defective no power to valve or water supply fault","Action":"Open stop valve replace inlet valve repair electrics or repair water supply"},{"Code":"26","Category":"Water Supply","Error":"No water filling 2","Cause":"Stop valve closed inlet valve defective no power to valve or water supply fault","Action":"Open stop valve replace inlet valve repair electrics or repair water supply"},{"Code":"29","Category":"Water Supply","Error":"No water filling 3","Cause":"Stop valve closed inlet valve defective no power to valve or water supply fault","Action":"Open stop valve replace inlet valve repair electrics or repair water supply"},{"Code":"27","Category":"Pump System","Error":"Pump pressure error","Cause":"Thermal fuse tripped low pressure foam formation inverter or pressure sensor fault","Action":"Allow reset verify sensors check detergent and wiring"},{"Code":"28","Category":"Drainage","Error":"No draining","Cause":"Blocked drain defective valve pump or conductivity sensor","Action":"Clean drainage inspect valve replace sensor or check wiring"},{"Code":"30","Category":"Heating","Error":"Slow heating wash tank","Cause":"Heating element or contactor defective too much water in tank","Action":"Replace element or contactor check water level setup"},{"Code":"31","Category":"Heating","Error":"Switched to electrical heating","Cause":"Steam heating too slow defective steam generator","Action":"Check or replace steam generator"},{"Code":"32","Category":"Water Treatment","Error":"Missing salt","Cause":"No salt defective wires or defective level switch","Action":"Refill salt repair wiring replace level switch"},{"Code":"33","Category":"Safety","Error":"Leakage detected","Cause":"Leak in machine base or sensor enabled but not connected","Action":"Inspect leaks clean water verify sensor connection"},{"Code":"35","Category":"Heating","Error":"No heating wash tank","Cause":"Cut out activated defective element contactor low water or pressure sensor fault","Action":"Reset cut out replace element check leaks verify detergent"},{"Code":"36","Category":"Heating","Error":"No dry heating","Cause":"Cut out activated defective element or contactor","Action":"Reset cut out replace heating parts repair connections"},{"Code":"37","Category":"Cooling / Drying","Error":"No cooling hot load","Cause":"Blower not working airflow blocked or condenser fault","Action":"Check blower airflow and condenser pipes"},{"Code":"40","Category":"Actuator System","Error":"Actuator valve position error","Cause":"Valve or feedback signal failure","Action":"Verify valve and feedback signal"},{"Code":"45","Category":"Chemical System","Error":"Chemical level 1 low","Cause":"Empty chemical canister defective level indicator or wiring","Action":"Replace canister clean indicator repair wiring"},{"Code":"46","Category":"Chemical System","Error":"Chemical level 2 low","Cause":"Empty chemical canister defective level indicator or wiring","Action":"Replace canister clean indicator repair wiring"},{"Code":"47","Category":"Chemical System","Error":"Chemical level 3 low","Cause":"Empty chemical canister defective level indicator or wiring","Action":"Replace canister clean indicator repair wiring"},{"Code":"48","Category":"Chemical System","Error":"Chemical level 4 low","Cause":"Empty chemical canister defective level indicator or wiring","Action":"Replace canister clean indicator repair wiring"},{"Code":"61","Category":"Communication","Error":"XML data client offline","Cause":"LAN cable disconnected network error or IPC not running","Action":"Check LAN cable troubleshoot network verify IPC"},{"Code":"62","Category":"Communication","Error":"MES client offline","Cause":"Controller LAN disconnected network error or MES system offline","Action":"Check LAN cable troubleshoot network verify MES"},{"Code":"65","Category":"Door System","Error":"Door unclean side not closed","Cause":"Door switch wiring motor chain or spring defect","Action":"Check connections repair door mechanism"},{"Code":"67","Category":"Door System","Error":"Door clean side not closed","Cause":"Door switch wiring motor chain or spring defect","Action":"Check connections repair door mechanism"},{"Code":"70","Category":"IMS Sensors","Error":"Conductivity sensors inaccurate","Cause":"Sensor defect calibration error or machine setting too low","Action":"Calibrate sensors adjust setting"},{"Code":"71","Category":"IMS Sensors","Error":"Conductivity too high","Cause":"Incorrect chemistry or program limit incorrect","Action":"Verify conductivity and program settings"},{"Code":"72","Category":"IMS Sensors","Error":"Tank 1 temperature sensor inaccurate","Cause":"Sensor or controller defect or calibration issue","Action":"Verify and calibrate sensor"},{"Code":"73","Category":"IMS Sensors","Error":"Tank 2 temperature sensor inaccurate","Cause":"Sensor or controller defect or calibration issue","Action":"Verify and calibrate sensor"},{"Code":"74","Category":"Temperature","Error":"Prewash temperature too high","Cause":"Hot water used or insufficient cooling water","Action":"Configure cold water supply"},{"Code":"75","Category":"Temperature","Error":"Wash tank temp out of range","Cause":"Sensor wiring short or open circuit","Action":"Repair wiring"},{"Code":"76","Category":"Temperature","Error":"Drying temp out of range","Cause":"Sensor wiring short or open circuit","Action":"Repair wiring"},{"Code":"77","Category":"Temperature","Error":"Disinfection monitor temp out of range","Cause":"Sensor wiring short or open circuit","Action":"Repair wiring"},{"Code":"78","Category":"Temperature","Error":"Tank 2 temp out of range","Cause":"Sensor wiring short or open circuit","Action":"Repair wiring"},{"Code":"79","Category":"Temperature","Error":"Temperature difference too high","Cause":"Sensor wiring defect or calibration error","Action":"Repair wiring calibrate sensors"},{"Code":"81","Category":"Pressure System","Error":"Wash pressure sensors inaccurate","Cause":"Sensor defect or calibration error","Action":"Verify and calibrate sensor"},{"Code":"82","Category":"Pressure System","Error":"Wash pressure too low","Cause":"Pump thermal fuse low pressure or foam formation","Action":"Allow reset verify pressure sensor check detergent"},{"Code":"85","Category":"Conductivity","Error":"Conductivity too low","Cause":"Incorrect chemistry concentration","Action":"Verify water chemistry"},{"Code":"86","Category":"Conductivity","Error":"Conductivity too high","Cause":"Incorrect chemistry concentration","Action":"Verify water chemistry"},{"Code":"87","Category":"Rinse System","Error":"Max rinse retries reached","Cause":"Poor rinse water quality or contaminated load","Action":"Verify rinse program and load"},{"Code":"88","Category":"Conductivity","Error":"Sensor disconnected","Cause":"Wiring fault to conductivity sensor","Action":"Repair wiring"},{"Code":"91","Category":"Maintenance","Error":"Service needed","Cause":"Service interval expired","Action":"Perform scheduled service"},{"Code":"95","Category":"Drying System","Error":"Missing drying pressure","Cause":"Tube defect blower fault or pressure module defect","Action":"Repair tube wiring or replace module"},{"Code":"96","Category":"Drying System","Error":"Missing drying airflow","Cause":"Blocked HEPA filter blower not running","Action":"Replace filter check blower"},{"Code":"100","Category":"Loading System","Error":"Loading error","Cause":"Signal missing movement blocked or unit fault","Action":"Check wiring remove obstruction repair unit"},{"Code":"101","Category":"Loading System","Error":"Unloading error","Cause":"Signal missing movement blocked or unit fault","Action":"Check wiring remove obstruction repair unit"},{"Code":"103","Category":"Loading System","Error":"Unloading trolley error","Cause":"Trolley disconnected motor overload or encoder failure","Action":"Check trolley motor and encoder"},{"Code":"104","Category":"Loader Safety","Error":"Loader safety triggered","Cause":"Motor safety switch activated","Action":"Remove obstruction"},{"Code":"108","Category":"Loader Safety","Error":"Unloader safety triggered","Cause":"Motor safety switch activated","Action":"Remove obstruction"},{"Code":"105","Category":"Loader System","Error":"Loader encoder error","Cause":"No encoder signal from motor","Action":"Check encoder wiring"},{"Code":"109","Category":"Loader System","Error":"Unloader encoder error","Cause":"No encoder signal from motor","Action":"Check encoder wiring"},{"Code":"106","Category":"Loader System","Error":"Loader home position not activated","Cause":"Home switch not triggered","Action":"Check switch adjustment"},{"Code":"128","Category":"Loader System","Error":"Unloader home position not activated","Cause":"Home switch not triggered","Action":"Check switch adjustment"},{"Code":"107","Category":"Loader System","Error":"Loader homing not allowed","Cause":"Rack detected during homing","Action":"Remove rack reset alarm"},{"Code":"129","Category":"Loader System","Error":"Unloader homing not allowed","Cause":"Rack detected during homing","Action":"Remove rack reset alarm"}];
 const db_bandeli = [{"Model":"Bandelin Sonomic","Code Type":"Error","Code":"E1","Category":"Generator System","Error":"Generator Board 1 Defective","Action":"Generator board 1 failure or blown fuse"},{"Model":"Bandelin Sonomic","Code Type":"Error","Code":"E2","Category":"Generator System","Error":"Generator Board 2 Defective","Action":"Generator board 2 failure or blown fuse"},{"Model":"Bandelin Sonomic","Code Type":"Error","Code":"E3","Category":"Temperature Control","Error":"Temperature Board Defective","Action":"Temperature board failure or bus communication disconnected"},{"Model":"Bandelin Sonomic","Code Type":"Error","Code":"E4","Category":"Control Electronics","Error":"Relay Board Defective","Action":"Relay board failure or bus line disconnected"},{"Model":"Bandelin Sonomic","Code Type":"Error","Code":"E5","Category":"Heating System","Error":"Heating System Failure","Action":"Heating element or relay board defective; ultrasound may still heat bath"},{"Model":"Bandelin Sonomic","Code Type":"Error","Code":"E6","Category":"Flow Monitoring","Error":"Flow Rate Sensor Failure","Action":"Flow sensor unavailable or defective"},{"Model":"Bandelin Sonomic","Code Type":"Error","Code":"E7","Category":"Pump System","Error":"Pump Failure","Action":"Pump unavailable or defective"},{"Model":"Bandelin Sonomic","Code Type":"Error","Code":"E8","Category":"Channel Control","Error":"Channel Selector Failure","Action":"Channel selector defective or bus line disconnected"},{"Model":"Bandelin Trison","Code Type":"Error","Code":"E01","Category":"Pneumatic System","Error":"Compressed Air Pressure Error","Action":"Minimum pressure (5 bar) not reached or air coupling defective"},{"Model":"Bandelin Trison","Code Type":"Error","Code":"E02","Category":"Filtration System","Error":"Filter Clogged","Action":"Filter blocked, hose obstruction, or defective 2.1 bar pressure switch"},{"Model":"Bandelin Trison","Code Type":"Error","Code":"E05","Category":"Motor Control","Error":"Motorised Switch Failure","Action":"Motorised switch, control module, or controller board defective"},{"Model":"Bandelin Trison","Code Type":"Warning","Code":"W04","Category":"Accessory System","Error":"Twist Missing or Defective","Action":"TRISON Twist not installed or control module/controller fault"},{"Model":"Bandelin Trison","Code Type":"Warning","Code":"W05","Category":"Temperature Control","Error":"Bath Temperature Too Low","Action":"Bath fluid below required temperature; sensor or control module may be faulty"},{"Model":"Bandelin Trison","Code Type":"Warning","Code":"W06","Category":"Temperature Control","Error":"Bath Temperature Too High","Action":"Bath fluid above safe temperature; sensor or control module may be faulty"},{"Model":"Bandelin Sonorex","Code Type":"Fault","Code":"None","Category":"System Operation","Error":"Unit Not Powering On","Action":"Possible power supply or internal electrical fault"},{"Model":"Bandelin Sonorex","Code Type":"Fault","Code":"None","Category":"Cleaning Performance","Error":"Unsatisfactory Cleaning Results","Action":"Possible degassing skipped, wrong detergent, or overloaded bath"}];
 const db_platypus = [{"Category":"Platypus IQ Series (IQ3, IQ4, IQ5, IQ6)","Code":"SERVICE","Error":"Service Alarm","Cause":"Machine continues running but has detected an issue","Action":"Service technician should inspect machine soon","Severity":"Service Warning"},{"Category":"Platypus IQ Series (IQ3, IQ4, IQ5, IQ6)","Code":"CRITICAL","Error":"Critical Error","Cause":"Process stops immediately due to system fault","Action":"Do not force door open; use unlock code (e.g., 12468)","Severity":"Critical"},{"Category":"Platypus IQ Series (IQ3, IQ4, IQ5, IQ6)","Code":"CRITICAL","Error":"Critical Error Continued","Cause":"System locked in fault state","Action":"Acknowledge error using Reset button and contact service if covers must be removed","Severity":"Critical"},{"Category":"Platypus Sonomic","Code":"E1","Error":"Generator board 1 defective","Cause":"Rinsing component failure","Action":"Unit usable only in processing mode 3; contact service","Severity":"Critical"},{"Category":"Platypus Sonomic","Code":"E2","Error":"Generator board 2 defective","Cause":"Rinsing component failure","Action":"Unit usable only in processing mode 3; contact service","Severity":"Critical"},{"Category":"Platypus Sonomic","Code":"E3","Error":"Temperature board defective","Cause":"Rinsing component failure","Action":"Unit usable only in processing mode 3; contact service","Severity":"Critical"},{"Category":"Platypus Sonomic","Code":"E4","Error":"Relay board defective","Cause":"Rinsing component failure","Action":"Unit usable only in processing mode 3; contact service","Severity":"Critical"},{"Category":"Platypus Sonomic","Code":"E5","Error":"Heating defective","Cause":"Heater failure","Action":"Machine still usable but manually monitor bath temperature (18–25°C)","Severity":"Warning"},{"Category":"Platypus Sonomic","Code":"E6","Error":"Flow rate sensor defective","Cause":"Sensor failure affecting rinse cycle","Action":"Unit usable only in processing mode 3; contact service","Severity":"Critical"},{"Category":"Platypus Sonomic","Code":"E7","Error":"Pump defective","Cause":"Pump failure affecting rinsing system","Action":"Unit usable only in processing mode 3; contact service","Severity":"Critical"},{"Category":"Platypus Sonomic","Code":"E8","Error":"Channel selector defective","Cause":"Channel control failure","Action":"Unit usable only in processing mode 3; contact service","Severity":"Critical"},{"Category":"Platypus Sonomic","Code":"None","Error":"Filter clogged","Cause":"Filter cartridge clogged or incorrectly installed","Action":"Remove housing and replace filter cartridge","Severity":"Warning"},{"Category":"Platypus Sonomic","Code":"None","Error":"Instrument non-patent","Cause":"Instrument lumen blocked or adapters incorrect","Action":"Check fluid coverage, adapter connections and hoses","Severity":"Warning"},{"Category":"Platypus Sonomic","Code":"None","Error":"Insufficient fluid","Cause":"Fill level sensor dirty or defective","Action":"Clean sensor and adjust fluid concentration","Severity":"Warning"},{"Category":"Platypus Sonomic","Code":"None","Error":"Temperature exceeds 40°C","Cause":"Bath fluid too hot","Action":"Change bath liquid partially or fully","Severity":"Warning"},{"Category":"Platypus Sonomic","Code":"None","Error":"Temperature too low","Cause":"Bath fluid too cold","Action":"Wait for heating cycle to complete","Severity":"Information"},{"Category":"Platypus Sonomic","Code":"None","Error":"Serious device defect","Cause":"Critical system failure","Action":"Unit not ready for use; contact service","Severity":"Critical"},{"Category":"Platypus Sonomic","Code":"None","Error":"Maintenance interval reached","Cause":"Approx. 4500 operating hours reached","Action":"Perform scheduled 2-year maintenance","Severity":"Maintenance"},{"Category":"Platypus Sonomic","Code":"None","Error":"Hose exchange necessary","Cause":"Pump hose reached 1000 hours","Action":"Replace pump hose","Severity":"Maintenance"},{"Category":"Platypus Sonomic","Code":"None","Error":"Display remains dark","Cause":"No power supply","Action":"Check mains power connection switch and fuses","Severity":"Critical"},{"Category":"Platypus Sonomic","Code":"None","Error":"Blinking progress bars","Cause":"Bath preparing for operation","Action":"Wait up to 1 minute","Severity":"Information"},{"Category":"Platypus Sonomic","Code":"None","Error":"Unsatisfactory cleaning","Cause":"Degassing skipped or insufficient cleaning agent","Action":"Perform degassing and use approved cleaning agent","Severity":"Warning"},{"Category":"Platypus Sonomic","Code":"None","Error":"Weak or loud oscillation","Cause":"Machine overloaded or generator defective","Action":"Remove instruments or perform foil test","Severity":"Warning"},{"Category":"Platypus Sonomic","Code":"None","Error":"Crash on welcome screen","Cause":"Unit powered on/off too quickly","Action":"Turn off unit and wait 10 seconds before restarting","Severity":"Information"},{"Category":"Platypus Trison","Code":"E01","Error":"No air pressure","Cause":"Compressed air not connected or pressure incorrect","Action":"Check air coupling and pressure settings","Severity":"Critical"},{"Category":"Platypus Trison","Code":"E02","Error":"Filter clogged","Cause":"Filter cartridge clogged or installed incorrectly","Action":"Replace filter cartridge or reinstall correctly","Severity":"Warning"},{"Category":"Platypus Trison","Code":"E05","Error":"Error switch defective","Cause":"Internal switch failure","Action":"Manufacturer repair required","Severity":"Critical"},{"Category":"Platypus Trison","Code":"W02","Error":"Maintenance warning","Cause":"2-year maintenance interval reached","Action":"Perform maintenance","Severity":"Maintenance"},{"Category":"Platypus Trison","Code":"None","Error":"Temperature exceeds critical value","Cause":"Bath fluid too hot","Action":"Allow liquid to cool or partially replace fluid","Severity":"Warning"},{"Category":"Platypus Trison","Code":"None","Error":"Temperature too low","Cause":"Bath fluid too cold","Action":"Replace liquid with fluid at least 20°C","Severity":"Warning"},{"Category":"Platypus Trison","Code":"None","Error":"Twist not connected","Cause":"Robotic program started without TRISON Twist","Action":"Connect Twist accessory","Severity":"Warning"},{"Category":"Platypus Trison","Code":"None","Error":"Maximum protocols reached","Cause":"Storage limit of 50 protocols reached","Action":"Export protocols to USB and delete from system","Severity":"Information"},{"Category":"Platypus Trison","Code":"None","Error":"Process interrupted","Cause":"User manually interrupted process","Action":"Press Back to cancel or Forward to confirm","Severity":"Information"},{"Category":"Platypus Trison","Code":"None","Error":"Display remains dark","Cause":"No power supply","Action":"Check mains connection switch and fuses","Severity":"Critical"},{"Category":"Platypus Trison","Code":"None","Error":"Freezes on welcome screen","Cause":"Fast power cycling or network issue","Action":"Wait 10 seconds before restart and check ethernet cable","Severity":"Warning"},{"Category":"Platypus Trison","Code":"None","Error":"Instrument not penetrable","Cause":"Fluid coverage or hose issue","Action":"Check adapters and hoses","Severity":"Warning"},{"Category":"Platypus Trison","Code":"None","Error":"Uneven instrument movement","Cause":"Normal chaotic programmed movement","Action":"No action required","Severity":"Information"},{"Category":"Platypus Trison","Code":"None","Error":"Weak or loud oscillation","Cause":"Oscillation system or HF generator failure","Action":"Perform foil test and compare with baseline","Severity":"Warning"},{"Category":"Platypus Trison","Code":"None","Error":"Unsatisfactory cleaning","Cause":"Degassing skipped or poor cleaning agent","Action":"Perform degassing or manual cleaning","Severity":"Warning"},{"Category":"Platypus Sonorex","Code":"None","Error":"Weak or uneven oscillation","Cause":"Possible defective oscillation components","Action":"Perform foil test and verify fill level or degassing","Severity":"Warning"}];
 const db_hippo = [{"Category":"Drying System","Type":"Alarm","Code":"A18","Error":"Overheating Drying Module 1","Cause":"Drying module temperature exceeded safe limit","Notes":""},{"Category":"Cabinet Access","Type":"Alarm","Code":"A19","Error":"Maintenance Door Opened (CPT)","Cause":"Maintenance access panel open or incorrectly installed","Notes":"Compact model"},{"Category":"Water Supply","Type":"Alarm","Code":"A20","Error":"Slow Water Filling Direct Water 1","Cause":"Water inlet filling slower than expected","Notes":""},{"Category":"Water Supply","Type":"Alarm","Code":"A21","Error":"Slow Water Filling Direct Water 2","Cause":"Water inlet filling slow","Notes":"Compact / Manual door models"},{"Category":"Water Supply","Type":"Alarm","Code":"A24","Error":"Slow Water Filling Direct Water 3","Cause":"Water filling delay detected","Notes":""},{"Category":"Water Supply","Type":"Alarm","Code":"A25","Error":"No Water Filling Direct Water 1","Cause":"No water detected during filling stage","Notes":""},{"Category":"Water Supply","Type":"Alarm","Code":"A26","Error":"No Water Filling Direct Water 2","Cause":"Water supply failure","Notes":""},{"Category":"Pump System","Type":"Alarm","Code":"A27","Error":"Main Pump Pressure Sensor Error","Cause":"Pressure sensor malfunction","Notes":""},{"Category":"Drain System","Type":"Alarm","Code":"A28","Error":"Washing Chamber Draining Failed","Cause":"Drain cycle unsuccessful","Notes":""},{"Category":"Water Supply","Type":"Alarm","Code":"A29","Error":"No Water Filling Direct Water 3","Cause":"Water inlet failure","Notes":""},{"Category":"Heating System","Type":"Warning","Code":"W30","Error":"Water Heating Too Slow","Cause":"Chamber heating slower than expected","Notes":""},{"Category":"Drying System","Type":"Warning","Code":"W32","Error":"Drying Module 1 Heating Too Slow","Cause":"Slow temperature rise","Notes":""},{"Category":"Drying System","Type":"Warning","Code":"W33","Error":"Drying Module 2 Heating Too Slow","Cause":"Slow heating detected","Notes":""},{"Category":"Drying System","Type":"Alarm","Code":"A34","Error":"No Heating Drying Module 1","Cause":"Heating element failure","Notes":""},{"Category":"Heating System","Type":"Alarm","Code":"A35","Error":"Chamber Heater Protection Active","Cause":"Safety thermostat triggered","Notes":""},{"Category":"Drying System","Type":"Alarm","Code":"A36","Error":"No Heating Drying Module 2","Cause":"Heating failure detected","Notes":""},{"Category":"Machine Installation","Type":"Alarm","Code":"A39","Error":"Machine Not Level","Cause":"Floor not horizontal","Notes":""},{"Category":"Machine Installation","Type":"Alarm","Code":"A40","Error":"Tilting Floor Error","Cause":"Incorrect floor tilt detected","Notes":""},{"Category":"Chemical Dosing","Type":"Alarm","Code":"A41","Error":"Chemistry 1 Flowmeter Disparity","Cause":"Dosing flow mismatch","Notes":""},{"Category":"Chemical Dosing","Type":"Alarm","Code":"A42","Error":"Chemistry 2 Flowmeter Disparity","Cause":"Dosing flow mismatch","Notes":""},{"Category":"Chemical Dosing","Type":"Alarm","Code":"A43","Error":"Chemistry 3 Flowmeter Disparity","Cause":"Dosing flow mismatch","Notes":""},{"Category":"Chemical Dosing","Type":"Alarm","Code":"A44","Error":"Chemistry 4 Flowmeter Disparity","Cause":"Dosing flow mismatch","Notes":""},{"Category":"Chemical Supply","Type":"Alarm","Code":"A45","Error":"Chemical 1 Low Level","Cause":"Chemical container empty","Notes":""},{"Category":"Chemical Supply","Type":"Alarm","Code":"A46","Error":"Chemical 2 Low Level","Cause":"Chemical container empty","Notes":""},{"Category":"Chemical Supply","Type":"Alarm","Code":"A47","Error":"Chemical 3 Low Level","Cause":"Chemical container empty","Notes":""},{"Category":"Chemical Supply","Type":"Alarm","Code":"A48","Error":"Chemical 4 Low Level","Cause":"Chemical container empty","Notes":""},{"Category":"Communication","Type":"Warning","Code":"W61","Error":"XML Data Client Offline","Cause":"Network data logging connection lost","Notes":""},{"Category":"Door System","Type":"Alarm","Code":"A65","Error":"Door Loading Side Not Closed","Cause":"Door switch indicates open","Notes":""},{"Category":"Door System","Type":"Alarm","Code":"A67","Error":"Door Unloading Side Not Closed","Cause":"Door switch indicates open","Notes":""},{"Category":"Temperature Control","Type":"Alarm","Code":"A74","Error":"Prewash Temperature Too High","Cause":"Temperature exceeded programmed limit","Notes":""},{"Category":"Temperature Control","Type":"Alarm","Code":"A75","Error":"Wash Chamber Temperature Out of Range","Cause":"Temperature outside allowable range","Notes":""},{"Category":"Drying System","Type":"Alarm","Code":"A76","Error":"Drying Temperature Out of Range","Cause":"Temperature sensor deviation","Notes":""},{"Category":"Disinfection Monitoring","Type":"Alarm","Code":"A77","Error":"Disinfection Temperature Out of Range","Cause":"Disinfection monitor failure","Notes":""},{"Category":"Temperature Control","Type":"Alarm","Code":"A79","Error":"Wash Chamber Temperature Difference Too High","Cause":"Sensor difference detected","Notes":""},{"Category":"Water Quality","Type":"Alarm","Code":"A85","Error":"Water Conductivity Too Low","Cause":"Possible incorrect water source","Notes":""},{"Category":"Water Quality","Type":"Alarm","Code":"A86","Error":"Water Conductivity Too High","Cause":"Possible contamination or wrong supply","Notes":""},{"Category":"Rinse System","Type":"Alarm","Code":"A87","Error":"Maximum Rinse Retries Reached","Cause":"Rinse stage repeatedly failed","Notes":""},{"Category":"Tank System","Type":"Warning","Code":"W110","Error":"Tank 1 Completely Empty","Cause":"Tank empty detected","Notes":""},{"Category":"Tank System","Type":"Alarm","Code":"A113","Error":"Tank 1 Heating Too Slow","Cause":"Heating inefficiency detected","Notes":""},{"Category":"Tank System","Type":"Alarm","Code":"A114","Error":"Tank 1 Water Leak Detected","Cause":"Possible tank leakage","Notes":""},{"Category":"Tank System","Type":"Warning","Code":"W117","Error":"Tank 1 Filling Too Slow","Cause":"Water filling delay","Notes":""},{"Category":"Tank System","Type":"Warning","Code":"W118","Error":"Tank 1 Draining Too Slow","Cause":"Drain system restriction","Notes":""},{"Category":"Mechanical System","Type":"Alarm","Code":"A121","Error":"Nozzle Tilting Blocked","Cause":"Mechanical obstruction","Notes":""},{"Category":"Water Metering","Type":"Alarm","Code":"A125","Error":"Direct Water Flowmeter Inaccurate","Cause":"Flow sensor misreading","Notes":""},{"Category":"Tank System","Type":"Alarm","Code":"A130","Error":"Tank 1 Temperature Out of Range","Cause":"Temperature sensor fault","Notes":""},{"Category":"Tank System","Type":"Alarm","Code":"A131","Error":"Tank 1 Heater Protection Active","Cause":"Safety cutoff triggered","Notes":""},{"Category":"Drying System","Type":"Alarm","Code":"A133","Error":"Blower Motor Overload","Cause":"Motor current overload","Notes":""},{"Category":"Drying System","Type":"Alarm","Code":"A134","Error":"No Drying Air Flow","Cause":"Air circulation failure","Notes":""},{"Category":"Disinfection Monitoring","Type":"Warning","Code":"W138","Error":"No Disinfection Within 24 Hours","Cause":"Maintenance reminder","Notes":""},{"Category":"Disinfection Monitoring","Type":"Alarm","Code":"A139","Error":"Disinfection Timeout","Cause":"Disinfection cycle failed","Notes":""},{"Category":"Tank System","Type":"Alarm","Code":"A142","Error":"Tank 1 Volume Out of Range","Cause":"Incorrect water level","Notes":""},{"Category":"Chemical Dosing","Type":"Alarm","Code":"A145","Error":"Chemistry 1 Dosing Failed","Cause":"Dosing pump malfunction","Notes":""},{"Category":"Chemical Dosing","Type":"Alarm","Code":"A146","Error":"Chemistry 2 Dosing Failed","Cause":"Dosing pump malfunction","Notes":""},{"Category":"Chemical Dosing","Type":"Alarm","Code":"A147","Error":"Chemistry 3 Dosing Failed","Cause":"Dosing pump malfunction","Notes":""},{"Category":"Chemical Dosing","Type":"Alarm","Code":"A148","Error":"Chemistry 4 Dosing Failed","Cause":"Dosing pump malfunction","Notes":""},{"Category":"Heating System","Type":"Alarm","Code":"A156","Error":"Wash Chamber Water Overheating","Cause":"Temperature exceeded limit","Notes":""},{"Category":"Water Supply","Type":"Alarm","Code":"A157","Error":"No Water in Chamber After Filling","Cause":"Water supply failure","Notes":""},{"Category":"Emergency System","Type":"Alarm","Code":"A175","Error":"Emergency Stop Activated","Cause":"External emergency stop pressed","Notes":""},{"Category":"Communication","Type":"Alarm","Code":"A201","Error":"CAN Communication Error","Cause":"Controller communication failure","Notes":""},{"Category":"Drive System","Type":"Alarm","Code":"A210","Error":"Frequency Inverter Failure","Cause":"Motor drive fault","Notes":""},{"Category":"Wash System","Type":"Alarm","Code":"A212","Error":"Target Wash Pressure Not Reached","Cause":"Possible pump or blockage issue","Notes":""},{"Category":"Trolley System","Type":"Alarm","Code":"A213","Error":"Trolley Not Docked","Cause":"Water flow disabled until docking complete","Notes":""},{"Category":"Wash System","Type":"Alarm","Code":"A216","Error":"Wash Pressure Out of Range","Cause":"Pressure sensor reading abnormal","Notes":""},{"Category":"Water Supply","Type":"Alarm","Code":"A244","Error":"No Water Pressure for Heating","Cause":"Heating stage disabled due to supply pressure","Notes":""},{"Category":"Operator Control","Type":"Alarm","Code":"A245","Error":"Chamber Stop Button Pressed","Cause":"Manual stop triggered","Notes":""},{"Category":"Air Supply","Type":"Alarm","Code":"A247","Error":"Not Enough Air Pressure","Cause":"Pneumatic system pressure low","Notes":""},{"Category":"Water Supply","Type":"Alarm","Code":"A248","Error":"No Water Filling Chamber Temperature Too High","Cause":"Safety lockout during filling","Notes":""},{"Category":"Drain System","Type":"Alarm","Code":"A249","Error":"Drain Pump Protection Active","Cause":"Pump thermal protection triggered","Notes":""},{"Category":"Heating System","Type":"Alarm","Code":"A252","Error":"Thermal Oil Leak Detected","Cause":"Thermal oil heating system leak","Notes":""},{"Category":"System Control","Type":"Alarm","Code":"A255","Error":"Forced IO While Program Running","Cause":"External IO override during cycle","Notes":""}];
-window.db = { parts: db_parts, bht: db_bht, gen5: db_gen5, tangent: db_tan, pan: db_pan, ken: db_ken, bandeli: db_bandeli, platypus: db_platypus, hippopotamus: db_hippo };
+const db_pan_alarms = [];
+window.db = { parts: db_parts, bht: db_bht, gen5: db_gen5, tangent: db_tan, pan: db_pan, pan_alarms: db_pan_alarms, ken: db_ken, bandeli: db_bandeli, platypus: db_platypus, hippopotamus: db_hippo };
 
 </script>
 
@@ -67,7 +68,7 @@ window.db = { parts: db_parts, bht: db_bht, gen5: db_gen5, tangent: db_tan, pan:
         body.view-active #secondaryView { transform: translateX(0); box-shadow: -10px 0 25px rgba(0,0,0,0.05); }
 
         header { 
-            background: var(--dark); color: white; padding: 35px 20px 60px 20px; 
+            background: var(--dark); color: white; padding: 25px 20px 25px 20px; 
             position: relative; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; 
             overflow: hidden;
         }
@@ -78,18 +79,49 @@ window.db = { parts: db_parts, bht: db_bht, gen5: db_gen5, tangent: db_tan, pan:
         .logo-text { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; margin: 0; }
         .badge-pro { background: linear-gradient(135deg, var(--warning), #f97316); color: white; font-size: 0.65rem; padding: 3px 8px; border-radius: 10px; vertical-align: super; font-weight: 800; }
         
-        .main-search-container { padding: 0 20px; max-width: 600px; margin: -30px auto 25px auto; position: relative; z-index: 15; }
+        .main-search-container { padding: 0 16px; margin: -30px 0 20px 0; position: relative; z-index: 15; }
         .search-wrapper { position: relative; width: 100%; display: flex; align-items: center; }
         .search-icon { position: absolute; left: 18px; font-size: 1.3rem; color: var(--text-muted); }
         .main-search-input { width: 100%; padding: 20px 20px 20px 50px; border-radius: var(--radius-lg); border: 2px solid transparent; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); box-shadow: var(--shadow-float); font-size: 1rem; font-family: 'Inter', sans-serif; font-weight: 500; outline: none; transition: var(--transition); }
         .main-search-input:focus { background: var(--surface); border-color: var(--primary); box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15), var(--shadow-float); }
 
-        .dashboard-container { padding: 0 20px; max-width: 600px; margin: 0 auto; }
+        .dashboard-container { padding: 16px 16px 0 16px; box-sizing: border-box; }
+
+        /* ── Long-press hold ring ── */
+        .data-card { position: relative; overflow: hidden; }
+        .data-card.holding { box-shadow: 0 0 0 3px var(--primary); }
+        .hold-ring { position: absolute; inset: 0; pointer-events: none; }
+        .hold-ring svg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 48px; height: 48px; opacity: 0; transition: opacity 0.15s; }
+        .data-card.holding .hold-ring svg { opacity: 1; }
+        .hold-ring circle.ring-track { fill: none; stroke: #e2e8f0; stroke-width: 4; }
+        .hold-ring circle.ring-fill  { fill: none; stroke: var(--primary); stroke-width: 4; stroke-linecap: round;
+            stroke-dasharray: 100; stroke-dashoffset: 100; transform-origin: center; transform: rotate(-90deg);
+            transition: stroke-dashoffset linear; }
+
+        /* ── Part Action Sheet ── */
+        .part-action-overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.45); z-index: 300; display: flex; align-items: flex-end; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
+        .part-action-overlay.active { opacity: 1; pointer-events: all; }
+        .part-action-sheet { background: var(--surface); width: 100%; max-width: 600px; margin: 0 auto; border-radius: 24px 24px 0 0; padding: 20px 20px 44px; transform: translateY(100%); transition: transform 0.3s cubic-bezier(.4,0,.2,1); }
+        .part-action-overlay.active .part-action-sheet { transform: translateY(0); }
+        .part-action-btn { display: flex; align-items: center; gap: 14px; width: 100%; padding: 16px 18px; border: none; border-radius: var(--radius-md); font-size: 1rem; font-family: 'Inter', sans-serif; font-weight: 700; cursor: pointer; margin-bottom: 10px; transition: opacity 0.15s; background: #f8fafc; color: var(--dark); }
+        .part-action-btn:active { opacity: 0.75; }
+        .part-action-btn.edit  { background: #eff6ff; color: var(--primary); }
+        .part-action-btn.del   { background: #fef2f2; color: var(--danger); }
+        .part-action-btn i { font-size: 1.3rem; }
+
+        /* ── Edit Part Form Sheet ── */
+        .edit-modal-overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.55); z-index: 400; display: flex; align-items: flex-end; opacity: 0; pointer-events: none; transition: opacity 0.25s; }
+        .edit-modal-overlay.active { opacity: 1; pointer-events: all; }
+        .edit-modal-sheet { background: var(--surface); width: 100%; max-width: 600px; margin: 0 auto; border-radius: 24px 24px 0 0; padding: 24px 20px 40px; transform: translateY(100%); transition: transform 0.3s cubic-bezier(.4,0,.2,1); }
+        .edit-modal-overlay.active .edit-modal-sheet { transform: translateY(0); }
+        .edit-field-label { font-size: 0.78rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; display: block; }
+        .edit-field-input { width: 100%; padding: 12px 14px; border: 2px solid #e2e8f0; border-radius: var(--radius-md); font-size: 0.95rem; font-family: 'Inter', sans-serif; font-weight: 500; background: #f8fafc; outline: none; box-sizing: border-box; transition: border-color 0.2s; }
+        .edit-field-input:focus { border-color: var(--primary); background: white; }
         .section-title { font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--text-muted); margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; gap: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
         
-        .dashboard { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 30px; }
+        .dashboard { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 28px; width: 100%; }
         
-        .menu-card { display: flex; flex-direction: column; justify-content: space-between; padding: 18px; border-radius: var(--radius-lg); border: none; cursor: pointer; text-decoration: none; background: var(--surface); box-shadow: var(--shadow-sm); transition: var(--transition); position: relative; overflow: hidden; text-align: left; }
+        .menu-card { display: flex; flex-direction: column; justify-content: space-between; padding: 20px 16px 16px; border-radius: var(--radius-lg); border: none; cursor: pointer; text-decoration: none; background: var(--surface); box-shadow: var(--shadow-sm); transition: var(--transition); position: relative; overflow: hidden; text-align: left; min-height: 110px; }
         
         .card-danger { background: linear-gradient(145deg, #ffffff, var(--danger-light)); border: 1px solid #fecaca; }
         .card-success { background: linear-gradient(145deg, #ffffff, var(--success-light)); border: 1px solid #a7f3d0; }
@@ -126,7 +158,7 @@ window.db = { parts: db_parts, bht: db_bht, gen5: db_gen5, tangent: db_tan, pan:
         .back-btn { background: var(--surface); color: var(--text-main); border: 1px solid #e2e8f0; padding: 10px 16px; border-radius: 30px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 0.9rem; transition: var(--transition); box-shadow: var(--shadow-sm); }
         .back-btn:active { background: #e2e8f0; transform: scale(0.95); }
         .view-title { margin: 0; font-family: 'Outfit', sans-serif; font-size: 1.15rem; font-weight: 800; color: var(--dark); text-transform: uppercase; letter-spacing: 0.5px;}
-        .sec-container { padding: 20px; max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+        .sec-container { padding: 16px; width: 100%; display: flex; flex-direction: column; gap: 12px; box-sizing: border-box; }
 
         .local-search-container { position: sticky; top: 60px; background: rgba(248, 250, 252, 0.95); backdrop-filter: blur(12px); padding: 10px 20px 15px 20px; z-index: 105; border-bottom: 1px solid rgba(0,0,0,0.05); margin-top: -10px; margin-bottom: 5px; }
         .local-search-input { width: 100%; padding: 12px 15px 12px 40px; border-radius: var(--radius-sm); border: 1px solid #cbd5e1; background: white; font-size: 0.95rem; font-family: 'Inter', sans-serif; font-weight: 500; outline: none; transition: var(--transition); }
@@ -200,6 +232,91 @@ window.db = { parts: db_parts, bht: db_bht, gen5: db_gen5, tangent: db_tan, pan:
 <body onload="init()">
 
 <div id="app">
+    <!-- Part Action Sheet (hold menu) -->
+    <div class="part-action-overlay" id="partActionSheet" onclick="closePartAction(event)">
+        <div class="part-action-sheet">
+            <div style="width:40px; height:4px; background:#e2e8f0; border-radius:2px; margin:0 auto 16px;"></div>
+            <div id="partActionTitle" style="font-family:'Outfit'; font-weight:900; font-size:1rem; color:var(--dark); margin-bottom:16px; padding:0 4px;"></div>
+            <button class="part-action-btn edit" onclick="openEditFromAction()">
+                <i class="ph-fill ph-pencil-simple"></i> Edit Part
+            </button>
+            <button class="part-action-btn del" onclick="deleteFromAction()">
+                <i class="ph-fill ph-trash"></i> Delete Part
+            </button>
+            <button class="part-action-btn" onclick="closePartAction()" style="margin-bottom:0; color:var(--text-muted);">
+                <i class="ph-fill ph-x"></i> Cancel
+            </button>
+        </div>
+    </div>
+
+    <!-- Edit Part Form -->
+    <div class="edit-modal-overlay" id="editPartModal" onclick="closeEditModal(event)">
+        <div class="edit-modal-sheet">
+            <div style="width:40px; height:4px; background:#e2e8f0; border-radius:2px; margin:0 auto 20px;"></div>
+            <h3 style="font-family:'Outfit'; font-weight:900; margin:0 0 20px; color:var(--dark);"><i class="ph-fill ph-pencil-simple" style="color:var(--primary);"></i> Edit Part</h3>
+            <div style="margin-bottom:14px;">
+                <label class="edit-field-label">Part ID</label>
+                <input id="edit-partid" class="edit-field-input" type="text" placeholder="Part ID">
+            </div>
+            <div style="margin-bottom:14px;">
+                <label class="edit-field-label">Description</label>
+                <input id="edit-desc" class="edit-field-input" type="text" placeholder="Description">
+            </div>
+            <div style="margin-bottom:14px;">
+                <label class="edit-field-label">Location</label>
+                <input id="edit-loc" class="edit-field-input" type="text" placeholder="Location">
+            </div>
+            <div style="margin-bottom:24px;">
+                <label class="edit-field-label">Stock</label>
+                <input id="edit-stock" class="edit-field-input" type="number" placeholder="Stock qty" min="0">
+            </div>
+            <div style="display:flex; gap:10px;">
+                <button class="btn btn-secondary" style="flex:1;" onclick="closeEditModal()">Cancel</button>
+                <button class="btn btn-primary" style="flex:2;" onclick="savePartEdit()"><i class="ph-bold ph-floppy-disk"></i> Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pan Location Edit Form -->
+    <div class="edit-modal-overlay" id="editPanModal" onclick="closePanEditModal(event)">
+        <div class="edit-modal-sheet">
+            <div style="width:40px; height:4px; background:#e2e8f0; border-radius:2px; margin:0 auto 20px;"></div>
+            <h3 style="font-family:'Outfit'; font-weight:900; margin:0 0 20px; color:var(--dark);"><i class="ph-fill ph-map-pin" style="color:var(--success);"></i> Edit Pan Location</h3>
+            <div style="margin-bottom:14px;">
+                <label class="edit-field-label">Unit S/N</label>
+                <input id="pan-sn" class="edit-field-input" type="text" placeholder="Unit Serial Number">
+            </div>
+            <div style="margin-bottom:14px;">
+                <label class="edit-field-label">Hospital</label>
+                <input id="pan-hospital" class="edit-field-input" type="text" placeholder="Hospital / Facility name">
+            </div>
+            <div style="margin-bottom:14px;">
+                <label class="edit-field-label">Block / Wing</label>
+                <input id="pan-block" class="edit-field-input" type="text" placeholder="e.g. Bullwinkel Wing (A)">
+            </div>
+            <div style="margin-bottom:14px;">
+                <label class="edit-field-label">Ward / Department</label>
+                <input id="pan-ward" class="edit-field-input" type="text" placeholder="e.g. ICU">
+            </div>
+            <div style="margin-bottom:14px;">
+                <label class="edit-field-label">Level</label>
+                <input id="pan-level" class="edit-field-input" type="text" placeholder="e.g. G / 1 / LG">
+            </div>
+            <div style="margin-bottom:14px;">
+                <label class="edit-field-label">Room</label>
+                <input id="pan-room" class="edit-field-input" type="text" placeholder="e.g. Dirty Utility">
+            </div>
+            <div style="margin-bottom:24px;">
+                <label class="edit-field-label">Comments</label>
+                <input id="pan-comments" class="edit-field-input" type="text" placeholder="Access notes, PINs, etc.">
+            </div>
+            <div style="display:flex; gap:10px;">
+                <button class="btn btn-secondary" style="flex:1;" onclick="closePanEditModal()">Cancel</button>
+                <button class="btn btn-primary" style="flex:2;" onclick="savePanEdit()"><i class="ph-bold ph-floppy-disk"></i> Save Changes</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Home Dashboard -->
     <main id="homeView" class="view-layer">
         <header>
@@ -207,34 +324,36 @@ window.db = { parts: db_parts, bht: db_bht, gen5: db_gen5, tangent: db_tan, pan:
                 <i class="ph-fill ph-database logo-icon"></i>
                 <h1 class="logo-text">Min's Database <span class="badge-pro">PRO</span></h1>
             </div>
-            <div class="main-search-container">
+        </header>
+
+        <div class="dashboard-container">
+            <div class="main-search-container" style="padding: 0; margin: 0 0 20px 0;">
                 <div class="search-wrapper">
                     <i class="ph ph-magnifying-glass search-icon"></i>
                     <input type="text" id="mainSearch" class="main-search-input" placeholder="Search 516 items (S/N, Parts...)" oninput="handleGlobalSearch()">
                 </div>
             </div>
-        </header>
-
-        <div class="dashboard-container">
-            <h2 class="section-title"><span><i class="ph-fill ph-warning-circle"></i> Quick Access</span></h2>
-            <div class="dashboard">
-                <div class="menu-card card-danger" onclick="openMode('out')" style="grid-column: span 2;">
+            <h2 class="section-title"><span><i class="ph-fill ph-map-trifold"></i> Location</span></h2>
+            <div class="dashboard" style="margin-bottom:25px;">
+                <div class="menu-card card-danger" onclick="openMode('out')">
                     <div class="card-icon-wrap"><i class="ph-fill ph-siren"></i></div>
                     <h3>Out of Stock</h3><p>Requires Reorder</p>
                     <div class="count-badge" id="b-out">0</div>
                 </div>
-                
                 <div class="menu-card card-primary" onclick="openMode('parts')">
                     <div class="card-icon-wrap"><i class="ph-fill ph-package"></i></div>
                     <h3>All Parts</h3><p>Inventory Details</p>
                     <div class="count-badge" id="b-parts">0</div>
                 </div>
-                <div class="menu-card card-success" onclick="openMode('pan')">
+                <div class="menu-card card-success" onclick="openMode('pan')" style="grid-column: span 2;">
                     <div class="card-icon-wrap"><i class="ph-fill ph-map-pin"></i></div>
                     <h3>Pan Locations</h3><p>Hospital Deployment</p>
                     <div class="count-badge" id="b-pan">0</div>
                 </div>
-                
+            </div>
+
+            <h2 class="section-title"><span><i class="ph-fill ph-stethoscope"></i> Diagnostics</span></h2>
+            <div class="dashboard">
                 <div class="menu-card card-warning" onclick="openMode('bht')">
                     <div class="card-icon-wrap"><i class="ph-fill ph-warning"></i></div>
                     <h3>BHT Codes</h3><p>Error diagnostics</p>
@@ -270,9 +389,14 @@ window.db = { parts: db_parts, bht: db_bht, gen5: db_gen5, tangent: db_tan, pan:
                     <h3>Hippopotamus</h3><p>Hippo Database</p>
                     <div class="count-badge" id="b-hippo">0</div>
                 </div>
+                <div class="menu-card card-warning" onclick="openMode('pan_alarms')">
+                    <div class="card-icon-wrap"><i class="ph-fill ph-bell-ringing"></i></div>
+                    <h3>Pan Alarms</h3><p>Pan error code database</p>
+                    <div class="count-badge" id="b-pan-alarms">0</div>
+                </div>
             </div>
             
-            <h2 class="section-title"><span><i class="ph-fill ph-calculator"></i> Tooling</span></h2>
+            <h2 class="section-title"><span><i class="ph-fill ph-calculator"></i> Engineering Tools</span></h2>
             <div class="dashboard">
                 <div class="menu-card card-teal" onclick="openCalculator('temp')">
                     <div class="card-icon-wrap" style="color:var(--teal)"><i class="ph-fill ph-thermometer"></i></div>
@@ -298,9 +422,13 @@ window.db = { parts: db_parts, bht: db_bht, gen5: db_gen5, tangent: db_tan, pan:
                     <div class="card-icon-wrap" style="color:var(--warning)"><i class="ph-fill ph-eyedropper-sample"></i></div>
                     <h3>Dose Check</h3><p>Volume & Ratio</p>
                 </div>
-                <div class="menu-card card-primary" onclick="openCalculator('ratio')" style="grid-column: span 2;">
+                <div class="menu-card card-primary" onclick="openCalculator('ratio')">
                     <div class="card-icon-wrap" style="color:var(--primary)"><i class="ph-fill ph-arrows-left-right"></i></div>
                     <h3>Fluid Ratio</h3><p>Convert Litres</p>
+                </div>
+                <div class="menu-card" onclick="openPasswordGen()" style="background:linear-gradient(145deg,#fff,#f0fdf4); border:1px solid #86efac;">
+                    <div class="card-icon-wrap" style="color:#16a34a"><i class="ph-fill ph-key"></i></div>
+                    <h3>Password Gen</h3><p>Codes &amp; Web Links</p>
                 </div>
             </div>
 
@@ -327,7 +455,7 @@ window.db = { parts: db_parts, bht: db_bht, gen5: db_gen5, tangent: db_tan, pan:
         <div class="view-header">
             <button class="back-btn" onclick="closeSecondary()"><i class="ph-bold ph-arrow-left"></i> Home</button>
             <h2 id="secTitle" class="view-title">Results</h2>
-            <div style="width: 80px;"></div>
+            <button id="addNewBtn" style="display:none; background:var(--primary); color:white; border:none; border-radius:30px; padding:8px 16px; font-weight:800; font-size:0.85rem; cursor:pointer; font-family:'Inter',sans-serif; display:none; align-items:center; gap:5px;" onclick="handleAddNew()"><i class="ph-bold ph-plus"></i> Add</button>
         </div>
         <div id="localSearchWrapper" class="local-search-container" style="display:none;">
             <i class="ph ph-magnifying-glass local-search-icon"></i>
@@ -355,7 +483,29 @@ window.db = { parts: db_parts, bht: db_bht, gen5: db_gen5, tangent: db_tan, pan:
         console.warn('data.js not loaded. Using empty db.');
     }
 
-    let photoVault = JSON.parse(localStorage.getItem('mins_photos')) || {};
+    // Photo storage - each image stored under its own key to avoid quota limits
+    function getPhotoKey(partID) { return 'mins_photo_' + partID; }
+    function loadPhoto(partID) { try { return localStorage.getItem(getPhotoKey(partID)); } catch(e) { return null; } }
+    function savePhoto(partID, dataUrl) { try { localStorage.setItem(getPhotoKey(partID), dataUrl); return true; } catch(e) { alert('Could not save photo - storage may be full. Try a smaller image.'); return false; } }
+    function deletePhotoStorage(partID) { localStorage.removeItem(getPhotoKey(partID)); }
+
+    // Legacy migration: move old bulk vault to per-key storage
+    (function migrateLegacyPhotos() {
+        const old = localStorage.getItem('mins_photos');
+        if (old) {
+            try {
+                const vault = JSON.parse(old);
+                Object.keys(vault).forEach(k => { if (vault[k]) { try { localStorage.setItem(getPhotoKey(k), vault[k]); } catch(e) {} } });
+                localStorage.removeItem('mins_photos');
+            } catch(e) {}
+        }
+    })();
+
+    // Custom parts stored separately so they persist across sessions
+    let customParts = [];
+    try { customParts = JSON.parse(localStorage.getItem('mins_custom_parts')) || []; } catch(e) {}
+    function saveCustomParts() { localStorage.setItem('mins_custom_parts', JSON.stringify(customParts)); }
+
     let masterDrive = JSON.parse(localStorage.getItem('mins_master_drive')) || {};
     let currentPartID = "";
     let activeMode = "";
@@ -364,13 +514,69 @@ window.db = { parts: db_parts, bht: db_bht, gen5: db_gen5, tangent: db_tan, pan:
     let currentLocalList = [];
     let currentLocalMode = "";
 
-    const modeLabels = { out: 'Out of Stock', parts: 'All Parts', pan: 'Pan Locations', bht: 'BHT Codes', gen5: 'Gen 5 Alarms', tangent: 'Tangent Faults', ken: 'Ken Alarms', bandeli: 'Bandeli', platypus: 'Platypus', hippopotamus: 'Hippopotamus' };
+    const modeLabels = { out: 'Out of Stock', parts: 'All Parts', pan: 'Pan Locations', pan_alarms: 'Pan Alarms', bht: 'BHT Codes', gen5: 'Gen 5 Alarms', tangent: 'Tangent Faults', ken: 'Ken Alarms', bandeli: 'Bandeli', platypus: 'Platypus', hippopotamus: 'Hippopotamus' };
+
+    // ── Parts edit/delete persistence ────────────────────────────────
+    let partsEdits = {};
+    let partsDeleted = new Set();
+    try { partsEdits = JSON.parse(localStorage.getItem('mins_parts_edits')) || {}; } catch(e) {}
+    try { partsDeleted = new Set(JSON.parse(localStorage.getItem('mins_parts_deleted')) || []); } catch(e) {}
+
+    // ── Pan Location edit/delete persistence ─────────────────────────
+    let panEdits = {};
+    let panDeleted = new Set();
+    try { panEdits = JSON.parse(localStorage.getItem('mins_pan_edits')) || {}; } catch(e) {}
+    try { panDeleted = new Set(JSON.parse(localStorage.getItem('mins_pan_deleted')) || []); } catch(e) {}    
+
+    function savePanOverrides() {
+        try {
+            localStorage.setItem('mins_pan_edits', JSON.stringify(panEdits));
+            localStorage.setItem('mins_pan_deleted', JSON.stringify([...panDeleted]));
+        } catch(e) { console.warn('Could not save pan overrides', e); }
+    }
+
+    function applyPanOverrides() {
+        db.pan.forEach((p, i) => {
+            if (panEdits[p['Unit S/N']]) Object.assign(db.pan[i], panEdits[p['Unit S/N']]);
+        });
+        if (panDeleted.size > 0) {
+            window.db.pan = db.pan.filter(p => !panDeleted.has(p['Unit S/N']));
+        }
+    }
+
+    function applyPartsOverrides() {
+        // Apply edits
+        db.parts.forEach((p, i) => {
+            if (partsEdits[p.PartID]) Object.assign(db.parts[i], partsEdits[p.PartID]);
+        });
+        // Remove deleted
+        if (partsDeleted.size > 0) {
+            window.db.parts = db.parts.filter(p => !partsDeleted.has(p.PartID));
+            window.db.out = db.parts.filter(p => !p.Stock || parseInt(p.Stock) === 0);
+        }
+    }
+
+    function savePartsOverrides() {
+        try {
+            localStorage.setItem('mins_parts_edits', JSON.stringify(partsEdits));
+            localStorage.setItem('mins_parts_deleted', JSON.stringify([...partsDeleted]));
+        } catch(e) { console.warn('Could not save parts overrides', e); }
+    }
 
     function init() {
         if (!masterDrive['inductions']) masterDrive['inductions'] = [];
         if (!masterDrive['general']) masterDrive['general'] = [];
         if (!masterDrive['iqoq']) masterDrive['iqoq'] = [];
         if (!masterDrive['manuals']) masterDrive['manuals'] = [];
+        applyPartsOverrides();
+        applyPanOverrides();
+
+        // Merge custom parts into db.parts (avoid duplicates)
+        customParts.forEach(cp => {
+            if (!db.parts.find(p => p.PartID === cp.PartID && p.Location === cp.Location)) {
+                db.parts.push(cp);
+            }
+        });
         
         document.getElementById('b-parts').innerText = db.parts.length || 0;
         document.getElementById('b-out').innerText = (db.parts.filter(p => !p.Stock || parseInt(p.Stock) === 0).length) || 0;
@@ -382,12 +588,21 @@ window.db = { parts: db_parts, bht: db_bht, gen5: db_gen5, tangent: db_tan, pan:
         document.getElementById('b-bandeli').innerText = db.bandeli.length || 0;
         document.getElementById('b-platypus').innerText = db.platypus.length || 0;
         document.getElementById('b-hippo').innerText = db.hippopotamus.length || 0;
+        document.getElementById('b-pan-alarms').innerText = db.pan_alarms.length || 0;
     }
 
     function openMode(mode, filterKey = null, filterValue = null) {
         activeMode = mode;
         document.body.classList.add('view-active');
         document.getElementById('secTitle').innerText = modeLabels[mode] + (filterValue ? ` (${filterValue})` : '');
+        
+        // Show/hide Add button
+        const addBtn = document.getElementById('addNewBtn');
+        if ((mode === 'parts' || mode === 'pan') && !filterValue) {
+            addBtn.style.display = 'flex';
+        } else {
+            addBtn.style.display = 'none';
+        }
         
         const backBtn = document.querySelector('.back-btn');
         if (filterValue && ['bht', 'gen5', 'bandeli', 'platypus', 'hippopotamus', 'tangent', 'ken'].includes(mode)) {
@@ -475,10 +690,23 @@ window.db = { parts: db_parts, bht: db_bht, gen5: db_gen5, tangent: db_tan, pan:
             }
         }
 
-        list.forEach(item => {
+        list.forEach((item, idx) => {
             let t = item['Error Code / Fault Name'] || item.PartID || item.Code || item['Error Code'] || item['Unit S/N'] || 'Unknown';
             let s = item['Alarm Description / Details'] || item.Description || item.Error || item['Display / Message'] || item.Location || item['Alarm Description'] || '';
-            content.innerHTML += `<div class="data-card" onclick='showDetails(${JSON.stringify(item).replace(/'/g, "&#39;")}, "${mode}")'><div class="data-title">${t}</div><div class="data-sub">${s}</div></div>`;
+            const isPart = (mode === 'parts' || mode === 'out' || mode === 'pan');
+            if (isPart) {
+                const card = document.createElement('div');
+                card.className = 'data-card';
+                let subtitle = s;
+                if (mode === 'pan') {
+                    subtitle = [item.Hospital, item.Block, item.Ward].filter(Boolean).join(' › ');
+                }
+                card.innerHTML = `<div class="data-title">${t}</div><div class="data-sub">${subtitle}</div><div class="hold-ring"><svg viewBox="0 0 36 36"><circle class="ring-track" cx="18" cy="18" r="15.9"/><circle class="ring-fill" cx="18" cy="18" r="15.9"/></svg></div>`;
+                attachLongPress(card, item);
+                content.appendChild(card);
+            } else {
+                content.innerHTML += `<div class="data-card" onclick='showDetails(${JSON.stringify(item).replace(/'/g, "&#39;")}, "${mode}")'><div class="data-title">${t}</div><div class="data-sub">${s}</div></div>`;
+            }
         });
     }
 
@@ -521,31 +749,73 @@ window.db = { parts: db_parts, bht: db_bht, gen5: db_gen5, tangent: db_tan, pan:
         if(found === 0) content.innerHTML = `<div class="empty-state"><i class="ph-fill ph-magnifying-glass empty-icon"></i><h3>No matches found</h3></div>`;
     }
 
+    // ── Part links (manual pins) persisted to localStorage ──────────
+    let partLinks = {};
+    try { partLinks = JSON.parse(localStorage.getItem('mins_part_links')) || {}; } catch(e) {}
+    function savePartLinks() { localStorage.setItem('mins_part_links', JSON.stringify(partLinks)); }
+
+    // Extracts meaningful words from an error code object for matching
+    function extractKeywords(item) {
+        const raw = Object.values(item).join(' ').toLowerCase();
+        // Strip common noise words
+        const noise = new Set(['the','and','or','for','to','in','of','a','an','is','are','not','if','check','call','verify','replace','via','with','by','on','at','from','due','be','was','has','have','been','that','this','when','do','run']);
+        return raw.replace(/[^a-z0-9\s]/g,' ')
+            .split(/\s+/)
+            .filter(w => w.length > 3 && !noise.has(w));
+    }
+
+    // Score a part against a set of keywords
+    function scorePartMatch(part, keywords) {
+        const desc = (part.Description || '').toLowerCase();
+        const id   = (part.PartID || '').toLowerCase();
+        let score = 0;
+        for (const kw of keywords) {
+            if (desc.includes(kw)) score += 2;
+            if (id.includes(kw))   score += 1;
+        }
+        return score;
+    }
+
     function showDetails(item, type) {
         currentPartID = item.PartID || item.Code || item['Error Code'] || item['Unit S/N'] || item['Error Code / Fault Name'] || 'Unknown';
         const b = document.getElementById('modalBody');
-        const isPart = (type === 'parts' || type === 'out');
-        
+        const isPart    = (type === 'parts' || type === 'out');
+        const isErrCode = !isPart && type !== 'pan';
+
         let html = "";
-        
-        // Photo Section for parts
+
+        // ── Photo Section for parts ──
         if (isPart) {
-            const photoSrc = photoVault[currentPartID];
+            const photoSrc = loadPhoto(currentPartID);
             html += `
-                <div class="photo-slot" onclick="document.getElementById('cameraInput').click()">
-                    ${photoSrc ? `<img src="${photoSrc}">` : `<div class="photo-lbl"><i class="ph-fill ph-camera" style="font-size:2rem;"></i>Tap to add photo</div>`}
+                <div style="margin-bottom:15px;">
+                    <div style="font-size:0.7rem; font-weight:800; color:#94a3b8; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px;">PHOTO</div>
+                    <div class="photo-slot" id="photoSlot" onclick="document.getElementById('cameraInput').click()" style="${photoSrc ? 'border-style:solid; border-color:#bfdbfe;' : ''}">
+                        ${photoSrc
+                            ? `<img src="${photoSrc}" id="photoImg">`
+                            : `<div class="photo-lbl"><i class="ph-fill ph-camera" style="font-size:2rem;"></i><span>Tap to add photo</span></div>`
+                        }
+                    </div>
+                    ${photoSrc ? `
+                    <div style="display:flex; gap:8px; margin-top:10px;">
+                        <button class="btn" style="flex:1; background:#eff6ff; color:var(--primary); border:1px solid var(--primary); padding:10px; font-size:0.85rem;" onclick="document.getElementById('cameraInput').click()">
+                            <i class="ph-bold ph-camera"></i> Change
+                        </button>
+                        <button class="btn btn-danger" style="flex:1; padding:10px; font-size:0.85rem;" onclick="deletePhoto()">
+                            <i class="ph-bold ph-trash"></i> Remove
+                        </button>
+                    </div>` : ''}
                 </div>
-                ${photoSrc ? `<button class="btn btn-danger" style="margin-bottom:20px;" onclick="deletePhoto()">Delete Photo</button>` : ''}
             `;
         }
-        
-        // Details
+
+        // ── Read-only detail rows ──
         Object.entries(item).forEach(([k, v]) => {
-            if(v !== undefined && v !== "") {
+            if (v !== undefined && v !== "") {
                 html += `<div class="detail-row"><div class="detail-lbl">${k}</div><div class="detail-val">${v}</div></div>`;
             }
         });
-        
+
         if (isPart) {
             html += `
                 <div style="display:flex; gap:10px; margin-top:20px;">
@@ -555,9 +825,125 @@ window.db = { parts: db_parts, bht: db_bht, gen5: db_gen5, tangent: db_tan, pan:
             `;
         }
 
+        // ── Associated Parts section (error codes only) ──────────────
+        if (isErrCode) {
+            const errKey = [type, currentPartID].join('::');
+
+            // Keyword-based auto-matches
+            const keywords = extractKeywords(item);
+            const allParts = db.parts || [];
+            const scored = allParts
+                .map(p => ({ part: p, score: scorePartMatch(p, keywords) }))
+                .filter(x => x.score > 0)
+                .sort((a, b) => b.score - a.score)
+                .slice(0, 6);
+
+            // Manually pinned parts
+            const pinned = (partLinks[errKey] || [])
+                .map(pid => allParts.find(p => p.PartID === pid))
+                .filter(Boolean);
+
+            html += `
+            <div style="margin-top:24px; border-top:2px solid #f1f5f9; padding-top:18px;">
+                <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;">
+                    <div style="font-size:0.75rem; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; display:flex; align-items:center; gap:6px;">
+                        <i class="ph-fill ph-wrench" style="color:var(--primary);"></i> Associated Parts
+                    </div>
+                    <button onclick="openPartLinker('${errKey.replace(/'/g,"&apos;")}')" style="background:#eff6ff; color:var(--primary); border:1px solid #bfdbfe; border-radius:20px; padding:6px 12px; font-size:0.78rem; font-weight:800; cursor:pointer; font-family:'Inter',sans-serif; display:flex; align-items:center; gap:5px;">
+                        <i class="ph-bold ph-link"></i> Link Part
+                    </button>
+                </div>`;
+
+            if (pinned.length > 0) {
+                html += `<div style="font-size:0.7rem; font-weight:800; color:#16a34a; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:8px;"><i class="ph-fill ph-push-pin"></i> Pinned</div>`;
+                pinned.forEach(p => {
+                    const stock = p.Stock > 0 ? `<span style="background:#dcfce7; color:#16a34a; border-radius:8px; padding:3px 8px; font-size:0.7rem; font-weight:800;">${p.Stock} in stock</span>` : `<span style="background:#fef2f2; color:#ef4444; border-radius:8px; padding:3px 8px; font-size:0.7rem; font-weight:800;">Out of stock</span>`;
+                    html += `
+                    <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:12px; padding:12px 14px; margin-bottom:8px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; gap:10px;" onclick='showDetails(${JSON.stringify(p).replace(/'/g,"&apos;")}, "parts")'>
+                        <div style="flex:1;">
+                            <div style="font-weight:800; font-size:0.9rem; color:var(--primary); font-family:'Outfit';">${p.PartID}</div>
+                            <div style="font-size:0.8rem; color:#374151; margin-top:2px; line-height:1.3;">${p.Description}</div>
+                        </div>
+                        <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px;">${stock}<button onclick="event.stopPropagation(); unlinkPart('${errKey.replace(/'/g,"&apos;")}', '${p.PartID}')" style="background:none; border:none; color:#94a3b8; cursor:pointer; padding:0; font-size:0.9rem;"><i class="ph-bold ph-x"></i></button></div>
+                    </div>`;
+                });
+            }
+
+            if (scored.length > 0) {
+                html += `<div style="font-size:0.7rem; font-weight:800; color:#64748b; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:8px; margin-top:${pinned.length ? '12px' : '0'};"><i class="ph-fill ph-magic-wand"></i> Smart Suggestions</div>`;
+                scored.forEach(({ part: p, score }) => {
+                    const stock = p.Stock > 0 ? `<span style="background:#dcfce7; color:#16a34a; border-radius:8px; padding:3px 8px; font-size:0.7rem; font-weight:800;">${p.Stock} in stock</span>` : `<span style="background:#fef2f2; color:#ef4444; border-radius:8px; padding:3px 8px; font-size:0.7rem; font-weight:800;">Out of stock</span>`;
+                    const relevanceDots = '●'.repeat(Math.min(score, 5));
+                    html += `
+                    <div style="background:var(--surface); border:1px solid #e2e8f0; border-radius:12px; padding:12px 14px; margin-bottom:8px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:10px;" onclick='showDetails(${JSON.stringify(p).replace(/'/g,"&apos;")}, "parts")'>
+                        <div style="flex:1;">
+                            <div style="font-weight:800; font-size:0.9rem; color:var(--primary); font-family:'Outfit';">${p.PartID}</div>
+                            <div style="font-size:0.8rem; color:#374151; margin-top:2px; line-height:1.3;">${p.Description}</div>
+                            <div style="font-size:0.65rem; color:#94a3b8; margin-top:4px; font-weight:700;">Relevance: <span style="color:var(--warning);">${relevanceDots}</span></div>
+                        </div>
+                        <div style="display:flex; flex-direction:column; align-items:flex-end; gap:6px;">${stock}<button onclick="event.stopPropagation(); pinPart('${errKey.replace(/'/g,"&apos;")}', '${p.PartID}')" style="background:#eff6ff; border:1px solid #bfdbfe; color:var(--primary); border-radius:8px; padding:4px 9px; font-size:0.75rem; font-weight:800; cursor:pointer; font-family:'Inter',sans-serif; white-space:nowrap;"><i class="ph-bold ph-push-pin"></i> Pin</button></div>
+                    </div>`;
+                });
+            }
+
+            if (pinned.length === 0 && scored.length === 0) {
+                html += `<div style="text-align:center; padding:20px; color:var(--text-muted); font-size:0.9rem;"><i class="ph-fill ph-wrench" style="font-size:2rem; color:#cbd5e1; display:block; margin-bottom:8px;"></i>No matching parts found.<br>Use <strong>Link Part</strong> to manually associate parts.</div>`;
+            }
+
+            html += `</div>`;
+        }
+
         b.innerHTML = html;
         document.getElementById('detailModal').classList.add('active');
     }
+
+    // ── Part Linker ─────────────────────────────────────────────────
+    function openPartLinker(errKey) {
+        const q = prompt('Enter Part ID or keyword to search:');
+        if (!q) return;
+        const allParts = db.parts || [];
+        const ql = q.toLowerCase();
+        const matches = allParts.filter(p =>
+            (p.PartID || '').toLowerCase().includes(ql) ||
+            (p.Description || '').toLowerCase().includes(ql)
+        ).slice(0, 10);
+
+        if (matches.length === 0) { alert('No parts found for: ' + q); return; }
+
+        const list = matches.map((p, i) => `${i + 1}. [${p.PartID}] ${p.Description} (Stock: ${p.Stock})`).join('\n');
+        const choice = prompt(`Found ${matches.length} parts — enter number to pin:\n\n${list}`);
+        const idx = parseInt(choice) - 1;
+        if (isNaN(idx) || idx < 0 || idx >= matches.length) return;
+
+        pinPart(errKey, matches[idx].PartID);
+        alert(`✓ Pinned: ${matches[idx].PartID}`);
+    }
+
+    function pinPart(errKey, partID) {
+        if (!partLinks[errKey]) partLinks[errKey] = [];
+        if (!partLinks[errKey].includes(partID)) {
+            partLinks[errKey].push(partID);
+            savePartLinks();
+        }
+        // Refresh modal if still open
+        const modal = document.getElementById('detailModal');
+        if (modal.classList.contains('active')) {
+            const allParts = db.parts || [];
+            const pinned = (partLinks[errKey] || []).map(pid => allParts.find(p => p.PartID === pid)).filter(Boolean);
+            // Re-render pinned section only
+            const pinnedContainer = modal.querySelector('[data-pinned]');
+            if (pinnedContainer) pinnedContainer.innerHTML = pinned.map(p => `<div>${p.PartID} — ${p.Description}</div>`).join('');
+        }
+    }
+
+    function unlinkPart(errKey, partID) {
+        if (!partLinks[errKey]) return;
+        partLinks[errKey] = partLinks[errKey].filter(id => id !== partID);
+        savePartLinks();
+        // Close and reopen to refresh
+        document.getElementById('detailModal').classList.remove('active');
+    }
+
 
     function closeModal(e) {
         if(e.target.id === 'detailModal' || e.target.classList.contains('modal-drag-handle') || e.target.innerText === 'Close Details') {
@@ -565,10 +951,288 @@ window.db = { parts: db_parts, bht: db_bht, gen5: db_gen5, tangent: db_tan, pan:
         }
     }
 
+    // ── Long-press (3 sec hold) logic ────────────────────────────────
+    let editTarget = null;
+    let actionTarget = null;
+    let actionRowEl  = null;
+    let actionMode   = '';
+    const HOLD_MS = 3000;
+
+    function attachLongPress(cardEl, item) {
+        let holdTimer = null;
+        let holdStarted = 0;
+        let startX = 0, startY = 0;
+        const ring = cardEl.querySelector('.ring-fill');
+
+        function startHold(x, y) {
+            holdStarted = Date.now();
+            startX = x; startY = y;
+            cardEl.classList.add('holding');
+            if (ring) {
+                ring.style.transition = 'none';
+                ring.style.strokeDashoffset = '100';
+                requestAnimationFrame(() => {
+                    ring.style.transition = `stroke-dashoffset ${HOLD_MS}ms linear`;
+                    ring.style.strokeDashoffset = '0';
+                });
+            }
+            holdTimer = setTimeout(() => {
+                holdTimer = null;
+                cardEl.classList.remove('holding');
+                if (navigator.vibrate) navigator.vibrate(40);
+                openPartAction(item, cardEl);
+            }, HOLD_MS);
+        }
+
+        function cancelHold(isTap) {
+            const wasHolding = holdTimer !== null;
+            clearTimeout(holdTimer);
+            holdTimer = null;
+            cardEl.classList.remove('holding');
+            if (ring) {
+                ring.style.transition = 'none';
+                ring.style.strokeDashoffset = '100';
+            }
+            // Short tap (< 300ms) → open detail view
+            if (isTap && wasHolding && (Date.now() - holdStarted) < 300) {
+                showDetails(item, currentLocalMode);
+            }
+        }
+
+        // Touch
+        cardEl.addEventListener('touchstart', e => {
+            startHold(e.touches[0].clientX, e.touches[0].clientY);
+        }, { passive: true });
+        cardEl.addEventListener('touchmove', e => {
+            const dx = e.touches[0].clientX - startX;
+            const dy = e.touches[0].clientY - startY;
+            if (Math.abs(dx) > 10 || Math.abs(dy) > 10) cancelHold(false);
+        }, { passive: true });
+        cardEl.addEventListener('touchend',   () => cancelHold(true));
+        cardEl.addEventListener('touchcancel', () => cancelHold(false));
+
+        // Mouse (desktop fallback)
+        cardEl.addEventListener('mousedown', e => startHold(e.clientX, e.clientY));
+        cardEl.addEventListener('mousemove', e => {
+            if (!holdTimer) return;
+            const dx = e.clientX - startX, dy = e.clientY - startY;
+            if (Math.abs(dx) > 10 || Math.abs(dy) > 10) cancelHold(false);
+        });
+        cardEl.addEventListener('mouseup',    () => cancelHold(true));
+        cardEl.addEventListener('mouseleave', () => cancelHold(false));
+    }
+
+    function openPartAction(item, cardEl) {
+        actionTarget = item;
+        actionRowEl  = cardEl;
+        actionMode   = currentLocalMode;
+        const label = item.PartID
+            ? `${item.PartID} — ${item.Description}`
+            : `${item['Unit S/N']} — ${item.Hospital}`;
+        document.getElementById('partActionTitle').textContent = label;
+        document.getElementById('partActionSheet').classList.add('active');
+    }
+
+    function closePartAction(e) {
+        if (!e || e.target.id === 'partActionSheet') {
+            document.getElementById('partActionSheet').classList.remove('active');
+        }
+    }
+
+    function openEditFromAction() {
+        document.getElementById('partActionSheet').classList.remove('active');
+        if (!actionTarget) return;
+        if (actionMode === 'pan') {
+            openPanEditModal(actionTarget);
+        } else {
+            openEditModal(actionTarget);
+        }
+    }
+
+    function deleteFromAction() {
+        document.getElementById('partActionSheet').classList.remove('active');
+        if (!actionTarget || !actionRowEl) return;
+        if (actionMode === 'pan') {
+            confirmDeletePan(actionTarget, actionRowEl);
+        } else {
+            confirmDeletePart(actionTarget, actionRowEl);
+        }
+    }
+
+    // ── Pan Location edit/delete handlers ─────────────────────────
+    let panEditTarget = null;
+
+    function openPanEditModal(item) {
+        panEditTarget = item;
+        document.getElementById('pan-sn').value       = item['Unit S/N'] || '';
+        document.getElementById('pan-hospital').value = item.Hospital || '';
+        document.getElementById('pan-block').value    = item.Block || '';
+        document.getElementById('pan-ward').value     = item.Ward || '';
+        document.getElementById('pan-level').value    = item.Level || '';
+        document.getElementById('pan-room').value     = item.Room || '';
+        document.getElementById('pan-comments').value = item.Comments || '';
+        document.getElementById('editPanModal').classList.add('active');
+    }
+
+    function closePanEditModal(e) {
+        if (!e || e.target.id === 'editPanModal') {
+            document.getElementById('editPanModal').classList.remove('active');
+            panEditTarget = null;
+        }
+    }
+
+    function savePanEdit() {
+        if (!panEditTarget) {
+            // ── NEW PAN LOCATION ──
+            const newSN = document.getElementById('pan-sn').value.trim();
+            if (!newSN) { alert('Unit S/N is required.'); return; }
+            const newEntry = {
+                'Unit S/N': newSN,
+                Hospital:   document.getElementById('pan-hospital').value.trim(),
+                Block:      document.getElementById('pan-block').value.trim(),
+                Ward:       document.getElementById('pan-ward').value.trim(),
+                Level:      document.getElementById('pan-level').value.trim(),
+                Room:       document.getElementById('pan-room').value.trim(),
+                Comments:   document.getElementById('pan-comments').value.trim()
+            };
+            db.pan.push(newEntry);
+            panEdits[newSN] = newEntry;
+            savePanOverrides();
+            document.getElementById('editPanModal').classList.remove('active');
+            document.getElementById('editPanModal').querySelector('h3').innerHTML =
+                '<i class="ph-fill ph-map-pin" style="color:var(--success);"></i> Edit Pan Location';
+            currentLocalList = db.pan;
+            renderLocalList(db.pan, 'pan', false);
+            document.getElementById('b-pan').innerText = db.pan.length;
+            return;
+        }
+        // ── EDIT EXISTING ──
+        const oldSN = panEditTarget['Unit S/N'];
+        const newSN  = document.getElementById('pan-sn').value.trim();
+        const idx = db.pan.findIndex(p => p['Unit S/N'] === oldSN);
+        if (idx !== -1) {
+            db.pan[idx]['Unit S/N'] = newSN;
+            db.pan[idx].Hospital    = document.getElementById('pan-hospital').value.trim();
+            db.pan[idx].Block       = document.getElementById('pan-block').value.trim();
+            db.pan[idx].Ward        = document.getElementById('pan-ward').value.trim();
+            db.pan[idx].Level       = document.getElementById('pan-level').value.trim();
+            db.pan[idx].Room        = document.getElementById('pan-room').value.trim();
+            db.pan[idx].Comments    = document.getElementById('pan-comments').value.trim();
+            panEdits[newSN] = { ...db.pan[idx] };
+            savePanOverrides();
+        }
+        document.getElementById('editPanModal').classList.remove('active');
+        panEditTarget = null;
+        currentLocalList = db.pan;
+        renderLocalList(db.pan, 'pan', false);
+        document.getElementById('b-pan').innerText = db.pan.length;
+    }
+
+    function confirmDeletePan(item, cardEl) {
+        if (!confirm(`Delete "${item['Unit S/N']} at ${item.Hospital}"?\nThis cannot be undone.`)) return;
+        const sn = item['Unit S/N'];
+        panDeleted.add(sn);
+        const idx = db.pan.findIndex(p => p['Unit S/N'] === sn);
+        if (idx !== -1) db.pan.splice(idx, 1);
+        savePanOverrides();
+
+        cardEl.style.transition = 'max-height 0.3s ease, opacity 0.3s ease';
+        cardEl.style.maxHeight = cardEl.offsetHeight + 'px';
+        requestAnimationFrame(() => { cardEl.style.maxHeight = '0'; cardEl.style.opacity = '0'; });
+        setTimeout(() => cardEl.remove(), 320);
+
+        document.getElementById('b-pan').innerText = db.pan.length;
+    }
+
+    function openEditModal(item) {
+        editTarget = item;
+        document.getElementById('edit-partid').value = item.PartID || '';
+        document.getElementById('edit-desc').value = item.Description || '';
+        document.getElementById('edit-loc').value = item.Location || '';
+        document.getElementById('edit-stock').value = item.Stock !== undefined ? item.Stock : '';
+        document.getElementById('editPartModal').classList.add('active');
+    }
+
+    function closeEditModal(e) {
+        if (!e || e.target.id === 'editPartModal') {
+            document.getElementById('editPartModal').classList.remove('active');
+            editTarget = null;
+        }
+    }
+
+    function savePartEdit() {
+        if (!editTarget) {
+            // ── NEW PART ──
+            const newPartID = document.getElementById('edit-partid').value.trim();
+            if (!newPartID) { alert('Part ID is required.'); return; }
+            const newPart = {
+                PartID: newPartID,
+                Description: document.getElementById('edit-desc').value.trim(),
+                Location:    document.getElementById('edit-loc').value.trim(),
+                Stock:       parseInt(document.getElementById('edit-stock').value) || 0
+            };
+            db.parts.push(newPart);
+            customParts.push(newPart);
+            saveCustomParts();
+            document.getElementById('editPartModal').classList.remove('active');
+            // Restore modal title
+            document.getElementById('editPartModal').querySelector('h3').innerHTML =
+                '<i class="ph-fill ph-pencil-simple" style="color:var(--primary);"></i> Edit Part';
+            const list = db.parts;
+            currentLocalList = list;
+            renderLocalList(list, 'parts', false);
+            document.getElementById('b-parts').innerText = db.parts.length;
+            document.getElementById('b-out').innerText = db.parts.filter(p => !p.Stock || parseInt(p.Stock) === 0).length;
+            return;
+        }
+        // ── EDIT EXISTING ──
+        const newPartID = document.getElementById('edit-partid').value.trim();
+        const newDesc   = document.getElementById('edit-desc').value.trim();
+        const newLoc    = document.getElementById('edit-loc').value.trim();
+        const newStock  = parseInt(document.getElementById('edit-stock').value) || 0;
+
+        const idx = db.parts.findIndex(p => p.PartID === editTarget.PartID);
+        if (idx !== -1) {
+            db.parts[idx].PartID = newPartID;
+            db.parts[idx].Description = newDesc;
+            db.parts[idx].Location = newLoc;
+            db.parts[idx].Stock = newStock;
+            partsEdits[newPartID] = { PartID: newPartID, Description: newDesc, Location: newLoc, Stock: newStock };
+            savePartsOverrides();
+        }
+
+        document.getElementById('editPartModal').classList.remove('active');
+        editTarget = null;
+
+        const list = (currentLocalMode === 'out') ? db.parts.filter(p => !p.Stock || parseInt(p.Stock) === 0) : db[currentLocalMode];
+        currentLocalList = list;
+        renderLocalList(list, currentLocalMode, false);
+        document.getElementById('b-parts').innerText = db.parts.length;
+        document.getElementById('b-out').innerText = db.parts.filter(p => !p.Stock || parseInt(p.Stock) === 0).length;
+    }
+
+    function confirmDeletePart(item, rowEl) {
+        if (!confirm(`Delete part "${item.PartID} — ${item.Description}"?\nThis cannot be undone.`)) return;
+        partsDeleted.add(item.PartID);
+        const idx = db.parts.findIndex(p => p.PartID === item.PartID);
+        if (idx !== -1) db.parts.splice(idx, 1);
+        savePartsOverrides();
+
+        // Animate row out
+        rowEl.style.transition = 'max-height 0.3s ease, opacity 0.3s ease';
+        rowEl.style.maxHeight = rowEl.offsetHeight + 'px';
+        requestAnimationFrame(() => { rowEl.style.maxHeight = '0'; rowEl.style.opacity = '0'; });
+        setTimeout(() => rowEl.remove(), 320);
+
+        document.getElementById('b-parts').innerText = db.parts.length;
+        document.getElementById('b-out').innerText = db.parts.filter(p => !p.Stock || parseInt(p.Stock) === 0).length;
+    }
+
     function closeSecondary() {
         document.body.classList.remove('view-active');
         document.getElementById('mainSearch').value = '';
         document.getElementById('localSearchWrapper').style.display = 'none';
+        document.getElementById('addNewBtn').style.display = 'none';
         setTimeout(() => {
             const backBtn = document.querySelector('.back-btn');
             backBtn.innerHTML = `<i class="ph-bold ph-arrow-left"></i> Home`;
@@ -576,27 +1240,106 @@ window.db = { parts: db_parts, bht: db_bht, gen5: db_gen5, tangent: db_tan, pan:
         }, 300);
     }
 
-    // -- Photo Logic
+    // ── Add New handlers ────────────────────────────────────────────
+    function handleAddNew() {
+        if (currentLocalMode === 'pan') {
+            addNewPan();
+        } else {
+            addNewPart();
+        }
+    }
+
+    function addNewPart() {
+        editTarget = null; // null = new mode
+        document.getElementById('edit-partid').value = '';
+        document.getElementById('edit-desc').value   = '';
+        document.getElementById('edit-loc').value    = '';
+        document.getElementById('edit-stock').value  = '';
+        document.getElementById('editPartModal').querySelector('h3').innerHTML =
+            '<i class="ph-fill ph-plus-circle" style="color:var(--success);"></i> Add New Part';
+        document.getElementById('editPartModal').classList.add('active');
+    }
+
+    function addNewPan() {
+        panEditTarget = null;
+        document.getElementById('pan-sn').value       = '';
+        document.getElementById('pan-hospital').value = '';
+        document.getElementById('pan-block').value    = '';
+        document.getElementById('pan-ward').value     = '';
+        document.getElementById('pan-level').value    = '';
+        document.getElementById('pan-room').value     = '';
+        document.getElementById('pan-comments').value = '';
+        document.getElementById('editPanModal').querySelector('h3').innerHTML =
+            '<i class="ph-fill ph-plus-circle" style="color:var(--success);"></i> Add New Location';
+        document.getElementById('editPanModal').classList.add('active');
+    }
+
+    // ── Photo Logic ───────────────────────────────────────────────
     function processPhoto(event) {
         const file = event.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                photoVault[currentPartID] = e.target.result;
-                localStorage.setItem('mins_photos', JSON.stringify(photoVault));
-                document.getElementById('detailModal').classList.remove('active');
-                setTimeout(() => openMode(activeMode), 300); // refresh list
+        // Reset so same file can be re-selected if needed
+        event.target.value = '';
+        if (!file) return;
+
+        // Compress image before saving to save storage space
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const img = new Image();
+            img.onload = () => {
+                const canvas = document.createElement('canvas');
+                const MAX = 1200;
+                let w = img.width, h = img.height;
+                if (w > MAX || h > MAX) {
+                    if (w > h) { h = Math.round(h * MAX / w); w = MAX; }
+                    else       { w = Math.round(w * MAX / h); h = MAX; }
+                }
+                canvas.width = w; canvas.height = h;
+                canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+                const compressed = canvas.toDataURL('image/jpeg', 0.75);
+                if (savePhoto(currentPartID, compressed)) {
+                    // Update the photo slot in-place without closing the modal
+                    const slot = document.getElementById('photoSlot');
+                    if (slot) {
+                        slot.innerHTML = `<img src="${compressed}" id="photoImg">`;
+                        slot.style.borderStyle = 'solid';
+                        slot.style.borderColor = '#bfdbfe';
+                    }
+                    // Re-render the action buttons if not already there
+                    const existing = document.querySelector('#modalBody .photo-actions');
+                    if (!existing) {
+                        const btnDiv = document.createElement('div');
+                        btnDiv.className = 'photo-actions';
+                        btnDiv.style.cssText = 'display:flex; gap:8px; margin-top:10px;';
+                        btnDiv.innerHTML = `
+                            <button class="btn" style="flex:1; background:#eff6ff; color:var(--primary); border:1px solid var(--primary); padding:10px; font-size:0.85rem;" onclick="document.getElementById('cameraInput').click()">
+                                <i class="ph-bold ph-camera"></i> Change
+                            </button>
+                            <button class="btn btn-danger" style="flex:1; padding:10px; font-size:0.85rem;" onclick="deletePhoto()">
+                                <i class="ph-bold ph-trash"></i> Remove
+                            </button>`;
+                        if (slot) slot.parentNode.appendChild(btnDiv);
+                    }
+                }
             };
-            reader.readAsDataURL(file);
-        }
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
     }
+
     function deletePhoto() {
-        if(confirm("Delete this photo?")) {
-            delete photoVault[currentPartID];
-            localStorage.setItem('mins_photos', JSON.stringify(photoVault));
-            document.getElementById('detailModal').classList.remove('active');
+        if (confirm('Remove photo for part ' + currentPartID + '?')) {
+            deletePhotoStorage(currentPartID);
+            const slot = document.getElementById('photoSlot');
+            if (slot) {
+                slot.innerHTML = `<div class="photo-lbl"><i class="ph-fill ph-camera" style="font-size:2rem;"></i><span>Tap to add photo</span></div>`;
+                slot.style.borderStyle = 'dashed';
+                slot.style.borderColor = '#cbd5e1';
+            }
+            const btnDiv = document.querySelector('#modalBody .photo-actions');
+            if (btnDiv) btnDiv.remove();
         }
     }
+
     function genEmail(id, task) {
         const sub = `Part Request - ${task}`;
         const body = `Work Task: ${task}\nPart Number: ${id}\nQuantity: 1\n\nPlease order this part and deliver it to Van 602.\n\nThank you.`;
@@ -1095,7 +1838,219 @@ window.db = { parts: db_parts, bht: db_bht, gen5: db_gen5, tangent: db_tan, pan:
         }
     }
 
+
+    // ── PASSWORD GENERATOR ──────────────────────────────────────────
+    let webLinks = [];
+    try { webLinks = JSON.parse(localStorage.getItem('mins_web_links')) || []; } catch(e) {}
+    function saveWebLinks() { localStorage.setItem('mins_web_links', JSON.stringify(webLinks)); }
+
+    function openPasswordGen() {
+        document.body.classList.add('view-active');
+        document.getElementById('secTitle').innerText = 'Password Gen';
+        document.getElementById('localSearchWrapper').style.display = 'none';
+        document.getElementById('addNewBtn').style.display = 'none';
+        const backBtn = document.querySelector('.back-btn');
+        backBtn.innerHTML = `<i class="ph-bold ph-arrow-left"></i> Home`;
+        backBtn.onclick = closeSecondary;
+
+        const c = document.getElementById('secContent');
+        c.innerHTML = `
+        <div style="display:flex; border-radius:14px; background:#e2e8f0; padding:5px; margin-bottom:20px; margin-top:4px; gap:4px;">
+            <button id="pgTab1" onclick="pgSwitch(1)" style="flex:1; border:none; border-radius:10px; padding:12px 8px; font-weight:900; font-size:0.85rem; font-family:'Inter',sans-serif; cursor:pointer; background:white; color:var(--dark); box-shadow:0 2px 6px rgba(0,0,0,0.08); transition:0.2s;"><i class="ph-fill ph-lock-key"></i> Tangent L8</button>
+            <button id="pgTab2" onclick="pgSwitch(2)" style="flex:1; border:none; border-radius:10px; padding:12px 8px; font-weight:900; font-size:0.85rem; font-family:'Inter',sans-serif; cursor:pointer; background:transparent; color:var(--text-muted); transition:0.2s;"><i class="ph-fill ph-globe"></i> Web Links</button>
+        </div>
+        <div id="pg-panel-1"></div>
+        <div id="pg-panel-2" style="display:none;"></div>`;
+
+        pgSwitch(1);
+        document.getElementById('secondaryView').scrollTop = 0;
+    }
+
+    function pgSwitch(tab) {
+        const t1 = document.getElementById('pgTab1');
+        const t2 = document.getElementById('pgTab2');
+        const p1 = document.getElementById('pg-panel-1');
+        const p2 = document.getElementById('pg-panel-2');
+        if (!t1) return;
+        if (tab === 1) {
+            t1.style.background='white'; t1.style.color='var(--dark)'; t1.style.boxShadow='0 2px 6px rgba(0,0,0,0.08)';
+            t2.style.background='transparent'; t2.style.color='var(--text-muted)'; t2.style.boxShadow='none';
+            p1.style.display='block'; p2.style.display='none';
+            renderTangentGen();
+        } else {
+            t2.style.background='white'; t2.style.color='var(--dark)'; t2.style.boxShadow='0 2px 6px rgba(0,0,0,0.08)';
+            t1.style.background='transparent'; t1.style.color='var(--text-muted)'; t1.style.boxShadow='none';
+            p2.style.display='block'; p1.style.display='none';
+            renderWebLinks();
+        }
+    }
+
+    // ── Tangent Level 8 Generator ──────────────────────────────────
+    function renderTangentGen() {
+        const p = document.getElementById('pg-panel-1');
+        const now = new Date();
+        const mm = String(now.getMonth() + 1).padStart(2, '0');
+        const dd = String(now.getDate()).padStart(2, '0');
+        const mmdd = mm + dd;
+        const digits = mmdd.split('');
+        const codes  = digits.map(d => (30 + parseInt(d)).toString());
+        const password = codes.join('');
+
+        const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+        const dayNames   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+        const dateStr    = `${dayNames[now.getDay()]}, ${monthNames[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+
+        p.innerHTML = `
+        <div style="background:linear-gradient(135deg,#1e293b,#0f172a); border-radius:20px; padding:28px 20px; text-align:center; margin-bottom:20px; box-shadow:0 12px 30px rgba(0,0,0,0.25); position:relative; overflow:hidden;">
+            <div style="position:absolute; top:-30px; right:-30px; width:120px; height:120px; background:rgba(59,130,246,0.15); border-radius:50%; filter:blur(20px);"></div>
+            <div style="font-size:0.75rem; font-weight:800; color:#64748b; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:6px;">Tangent Level 8 · Today</div>
+            <div style="font-size:0.9rem; font-weight:600; color:#94a3b8; margin-bottom:20px;">${dateStr}</div>
+            <div id="pg-password" style="font-size:2.8rem; font-weight:900; font-family:'Outfit',sans-serif; color:white; letter-spacing:4px; line-height:1; margin-bottom:8px;">${password}</div>
+            <div style="font-size:0.8rem; color:#64748b; margin-bottom:22px;">Date code: ${mm}/${dd}</div>
+            <button onclick="pgCopyPassword('${password}')" style="background:var(--primary); color:white; border:none; border-radius:30px; padding:12px 28px; font-weight:800; font-size:0.9rem; cursor:pointer; font-family:'Inter',sans-serif; display:inline-flex; align-items:center; gap:8px; box-shadow:0 4px 15px rgba(59,130,246,0.4);" id="pgCopyBtn">
+                <i class="ph-bold ph-copy"></i> Copy Password
+            </button>
+        </div>
+
+        <div style="background:var(--surface); border-radius:16px; padding:20px; border:1px solid #e2e8f0; margin-bottom:20px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+            <div style="font-size:0.75rem; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; margin-bottom:16px; display:flex; align-items:center; gap:8px;"><i class="ph-fill ph-function"></i> Atherton ASCII Breakdown</div>
+            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:16px;">
+                ${digits.map((d, i) => `
+                <div style="text-align:center; background:#f8fafc; border-radius:12px; padding:12px 8px; border:1px solid #e2e8f0;">
+                    <div style="font-size:1.4rem; font-weight:900; font-family:'Outfit'; color:var(--primary);">${d}</div>
+                    <div style="font-size:0.7rem; color:#94a3b8; margin:4px 0; font-weight:700;">30 + ${d}</div>
+                    <div style="font-size:1.1rem; font-weight:900; color:#16a34a; font-family:'Outfit';">${codes[i]}</div>
+                </div>`).join('')}
+            </div>
+            <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:10px; padding:12px 16px; font-size:0.9rem; color:#166534; font-weight:700;">
+                <i class="ph-fill ph-info"></i> Formula: each digit <strong>D</strong> → <strong>30 + D</strong> (Atherton ASCII chart)
+            </div>
+        </div>
+
+        <div style="background:var(--surface); border-radius:16px; padding:20px; border:1px solid #e2e8f0; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+            <div style="font-size:0.75rem; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;"><i class="ph-fill ph-calendar-blank"></i> Generate for any date</div>
+            <div style="display:flex; gap:10px; align-items:flex-end;">
+                <div style="flex:1;">
+                    <label style="font-size:0.75rem; font-weight:700; color:var(--text-muted); display:block; margin-bottom:6px;">Month</label>
+                    <input type="number" id="pg-mm" min="1" max="12" value="${parseInt(mm)}" class="edit-field-input" oninput="pgCustomCalc()">
+                </div>
+                <div style="flex:1;">
+                    <label style="font-size:0.75rem; font-weight:700; color:var(--text-muted); display:block; margin-bottom:6px;">Day</label>
+                    <input type="number" id="pg-dd" min="1" max="31" value="${parseInt(dd)}" class="edit-field-input" oninput="pgCustomCalc()">
+                </div>
+                <div style="flex:1;">
+                    <div style="font-size:0.72rem; font-weight:700; color:var(--text-muted); margin-bottom:6px;">Result</div>
+                    <div id="pg-custom-result" style="background:#1e293b; color:white; border-radius:10px; padding:12px; font-family:'Outfit'; font-weight:900; font-size:1.1rem; text-align:center; letter-spacing:2px;">${password}</div>
+                </div>
+            </div>
+        </div>`;
+    }
+
+    function pgCustomCalc() {
+        const mm2 = String(parseInt(document.getElementById('pg-mm').value) || 1).padStart(2, '0');
+        const dd2 = String(parseInt(document.getElementById('pg-dd').value) || 1).padStart(2, '0');
+        const result = (mm2 + dd2).split('').map(d => (30 + parseInt(d)).toString()).join('');
+        document.getElementById('pg-custom-result').textContent = result;
+    }
+
+    function pgCopyPassword(pw) {
+        navigator.clipboard.writeText(pw).then(() => {
+            const btn = document.getElementById('pgCopyBtn');
+            if (btn) { btn.innerHTML = '<i class="ph-bold ph-check"></i> Copied!'; btn.style.background='#16a34a'; setTimeout(() => { btn.innerHTML = '<i class="ph-bold ph-copy"></i> Copy Password'; btn.style.background='var(--primary)'; }, 2000); }
+        }).catch(() => {
+            const el = document.createElement('textarea');
+            el.value = pw; document.body.appendChild(el); el.select(); document.execCommand('copy'); document.body.removeChild(el);
+            const btn = document.getElementById('pgCopyBtn');
+            if (btn) { btn.innerHTML = '<i class="ph-bold ph-check"></i> Copied!'; setTimeout(() => { btn.innerHTML = '<i class="ph-bold ph-copy"></i> Copy Password'; }, 2000); }
+        });
+    }
+
+    // ── Web Links Vault ────────────────────────────────────────────
+    function renderWebLinks() {
+        const p = document.getElementById('pg-panel-2');
+        let html = `
+        <div style="background:var(--surface); border-radius:16px; padding:20px; border:1px solid #e2e8f0; margin-bottom:20px; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+            <div style="font-size:0.75rem; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;"><i class="ph-fill ph-plus-circle" style="color:var(--primary);"></i> Add New Web Link</div>
+            <div style="margin-bottom:10px;"><label class="edit-field-label">Site Name</label><input id="wl-name"  class="edit-field-input" type="text" placeholder="e.g. Atherton Service Portal"></div>
+            <div style="margin-bottom:10px;"><label class="edit-field-label">URL</label><input id="wl-url" class="edit-field-input" type="url" placeholder="https://..."></div>
+            <div style="margin-bottom:10px;"><label class="edit-field-label">Username / Email</label><input id="wl-user" class="edit-field-input" type="text" placeholder="username or email"></div>
+            <div style="margin-bottom:16px;"><label class="edit-field-label">Password</label><input id="wl-pass" class="edit-field-input" type="password" placeholder="saved password"></div>
+            <button onclick="wlAdd()" style="width:100%; background:var(--primary); color:white; border:none; border-radius:12px; padding:14px; font-weight:800; font-size:0.95rem; cursor:pointer; font-family:'Inter',sans-serif; display:flex; align-items:center; justify-content:center; gap:8px;"><i class="ph-bold ph-floppy-disk"></i> Save Link</button>
+        </div>`;
+
+        if (webLinks.length === 0) {
+            html += `<div class="empty-state"><i class="ph-fill ph-globe empty-icon"></i><h3>No web links saved</h3><p style="font-size:0.9rem;">Add a site above to store its login details.</p></div>`;
+        } else {
+            webLinks.forEach((lnk, i) => {
+                html += `
+                <div style="background:var(--surface); border-radius:14px; border:1px solid #e2e8f0; padding:18px; margin-bottom:12px; box-shadow:0 2px 6px rgba(0,0,0,0.04);">
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+                        <div style="font-weight:800; font-size:1rem; color:var(--dark); font-family:'Outfit';">${lnk.name}</div>
+                        <button onclick="wlDelete(${i})" style="background:#fef2f2; color:#ef4444; border:none; border-radius:8px; padding:6px 10px; font-size:0.8rem; font-weight:700; cursor:pointer;"><i class="ph-bold ph-trash"></i></button>
+                    </div>
+                    <div style="font-size:0.8rem; color:#64748b; margin-bottom:10px; word-break:break-all;">${lnk.url}</div>
+                    <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:12px;">
+                        <div style="display:flex; justify-content:space-between; background:#f8fafc; border-radius:8px; padding:10px 12px; align-items:center;">
+                            <span style="font-size:0.75rem; font-weight:700; color:#94a3b8;">USERNAME</span>
+                            <span style="font-weight:700; color:var(--dark); font-size:0.9rem;">${lnk.user}</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; background:#f8fafc; border-radius:8px; padding:10px 12px; align-items:center; gap:8px;">
+                            <span style="font-size:0.75rem; font-weight:700; color:#94a3b8;">PASSWORD</span>
+                            <span id="wl-pw-${i}" style="font-weight:700; color:var(--dark); font-size:0.9rem; font-family:'Courier New',monospace;">••••••••</span>
+                            <button onclick="wlToggle(${i})" id="wl-eye-${i}" style="background:none; border:none; color:#64748b; cursor:pointer; font-size:1.1rem; padding:0;"><i class="ph-bold ph-eye"></i></button>
+                            <button onclick="wlCopyPw(${i})" style="background:none; border:none; color:var(--primary); cursor:pointer; font-size:1.1rem; padding:0;"><i class="ph-bold ph-copy"></i></button>
+                        </div>
+                    </div>
+                    <button onclick="wlOpen('${lnk.url.replace(/'/g,"&#39;")}')" style="width:100%; background:linear-gradient(135deg,var(--primary),#2563eb); color:white; border:none; border-radius:10px; padding:12px; font-weight:800; font-size:0.9rem; cursor:pointer; font-family:'Inter',sans-serif; display:flex; align-items:center; justify-content:center; gap:8px;"><i class="ph-bold ph-arrow-square-out"></i> Open Website</button>
+                </div>`;
+            });
+        }
+        p.innerHTML = html;
+    }
+
+    function wlAdd() {
+        const name = document.getElementById('wl-name').value.trim();
+        const url  = document.getElementById('wl-url').value.trim();
+        const user = document.getElementById('wl-user').value.trim();
+        const pass = document.getElementById('wl-pass').value.trim();
+        if (!name || !url) { alert('Site Name and URL are required.'); return; }
+        let fullUrl = url;
+        if (!fullUrl.startsWith('http')) fullUrl = 'https://' + fullUrl;
+        webLinks.push({ name, url: fullUrl, user, pass });
+        saveWebLinks();
+        renderWebLinks();
+    }
+
+    function wlDelete(i) {
+        if (!confirm(`Delete "${webLinks[i].name}"?`)) return;
+        webLinks.splice(i, 1);
+        saveWebLinks();
+        renderWebLinks();
+    }
+
+    const _wlVisible = {};
+    function wlToggle(i) {
+        _wlVisible[i] = !_wlVisible[i];
+        const el  = document.getElementById(`wl-pw-${i}`);
+        const eye = document.getElementById(`wl-eye-${i}`);
+        if (el) el.textContent = _wlVisible[i] ? webLinks[i].pass : '••••••••';
+        if (eye) eye.innerHTML = _wlVisible[i] ? '<i class="ph-bold ph-eye-slash"></i>' : '<i class="ph-bold ph-eye"></i>';
+    }
+
+    function wlCopyPw(i) {
+        navigator.clipboard.writeText(webLinks[i].pass).catch(() => {
+            const el = document.createElement('textarea');
+            el.value = webLinks[i].pass; document.body.appendChild(el); el.select(); document.execCommand('copy'); document.body.removeChild(el);
+        });
+        const btn = event.currentTarget;
+        btn.innerHTML = '<i class="ph-bold ph-check"></i>';
+        setTimeout(() => { btn.innerHTML = '<i class="ph-bold ph-copy"></i>'; }, 1500);
+    }
+
+    function wlOpen(url) { window.open(url, '_blank'); }
+
     // -- SPARE PART PDFS
+
     let sparePartPdfs = [];
     try {
         sparePartPdfs = JSON.parse(localStorage.getItem('mins_spare_parts')) || [];
